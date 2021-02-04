@@ -1,16 +1,20 @@
 * {
 	box-sizing: border-box;
-		
+	
 }
+
+/*//////////////////////////////////////////////////////*/
+/*////////////////BASE STYLINGS/////////////////////////*/
+/*//////////////////////////////////////////////////////*/
 
 body {
 	font-family: Georgia, Times New Roman, serif;
 	padding: 0px;
 	margin: 0px;
 	background-color: #dddddd;
-	overflow-x: hidden;
+	
+	width: auto;
 }
-
 
 .col-xxs-3, .col-xxs-4, .col-xxs-6, .col-xxs-12 {
 	position: relative;
@@ -18,8 +22,6 @@ body {
 	padding-right: 15px;
 	padding-left: 15px;
 }
-
-
 
 .col-xxs-4 {
 	width: 33.33%;
@@ -50,31 +52,33 @@ body {
 	height: 250px;
 }
 
-
 /*////////////LOGO//////////////////*/
 /*////////////////////////////////////*/
 
 
-div.navbar-brand {
+.navbar-brand {
 	height: 100px;
 	position: relative;
 	width: 100%;
 }
 
-div.navbar-brand>div {
+.navbar-brand>div {
 	position: relative;
 	right: -0px;
 	top: -50px;
 }
 
+#navbar-brand>div {
+	width: auto;
+}
+
 .navbar-brand>div>h1 {
-	width: 200px;
 	position: absolute;
-	left: 150px;
-	bottom: -80px;
+	width: auto;
 	visibility: hidden;
 	text-shadow: 2px 2px 1px #95bcf2;
 	margin: 0px;
+	right: -50px;
 }
 
 #logo {
@@ -82,13 +86,18 @@ div.navbar-brand>div {
 	top: 0px;
 	left: 10px;
 }
-/*////////NAVIGATION///////////*/
-/*///////////////////////////////*/
 
-#collapsable-nav {
-	margin-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
+#fta-full {
+	width: 20px;
+	left: -5000px;
+}
+
+#fta {
+	visibility: visible;
+	left: 150px;
+	bottom: -120px;
+	width: 50px;
+	margin: 0px;
 }
 
 .navbar-toggler {
@@ -96,6 +105,32 @@ div.navbar-brand>div {
 	right: 30px;
 	bottom: -60px;
 	padding: 10px;
+}
+
+/*////////NAVIGATION///////////*/
+/*///////////////////////////////*/
+
+.contact-info {
+	position: absolute;
+	top: -10px;
+	right: 20px;
+	font-size: 0.75em;
+	font-weight: bold;
+	width: auto;
+}
+
+.contact-info>p {
+	margin: 0px;
+}
+
+#nav-phone-number {
+	visibility: hidden;
+}
+
+#collapsable-nav {
+	margin-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #nav-list {
@@ -125,42 +160,6 @@ div.navbar-brand>div {
 	color: white;
 }
 
-
-@media (max-width: 565px) {
-
-	.navbar-nav>li {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
-}
-
-
-/*///////////////////////////////////////*/
-/*///////////////////////////////////////*/
-
-
-
-.nav-item-lg {
-	float: left;
-}
-
-.contact-info {
-position: absolute;
-top: -10px;
-right: 20px;
-font-size: 0.75em;
-font-weight: bold;
-
-}
-
-.contact-info>p {
-	margin: 0px;
-}
-
-#nav-phone-number {
-	visibility: hidden;
-}
-
 #mobile-phone-box {
 	visibility: visible;
 	background: #95bcf2;
@@ -172,51 +171,51 @@ font-weight: bold;
 	box-shadow: 2px 2px 2px black;
 }
 
-h1#fta {
-	visibility: visible;
-	left: 150px;
-	bottom: -120px;
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+
+
+
+
+/*///////////ADJUST SCREEN FOR MOBILE DEVICES///////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (max-width: 565px) {
+	
+	.navbar-nav>li {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+
 }
-
-
-
-/*///////////////////////////////////////*/
-/*///////////////////////////////////////*/
-/*///////////////////////////////////////*/
-/*///////////////////////////////////////*/
-
-
-
-
-
-
 
 /*//////////////SMALL DEVICES//////////////////////*/
 @media (min-width: 566px) {
 
-.contact-info {
-	font-size: 1em;
-	right: 25px;
-}
+	.contact-info {
+		font-size: 1em;
+		right: 25px;
+	}
 
-h1#fta-full {
-	visibility: hidden;
-}
+	#fta-full {
+		visibility: hidden;
+	}
 
-h1#fta {
-	visibility: visible;
-}
-
-
-#mobile-phone-box {
-	visibility: visible;
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 33%;
-}
+	#fta {
+		visibility: visible;
+	}
 
 
+	#mobile-phone-box {
+		visibility: visible;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 33%;
+	}
 
 
 }
@@ -224,40 +223,37 @@ h1#fta {
 /*////////////////////MEDIUM DEVICES///////////////////*/
 @media (min-width: 768px) {
 
-#header-nav {
-	position: relative;
-}
+	#fta-full{
+		left: 140px;
+		bottom: -120px;
+		visibility: visible;
+	}
 
-h1#fta-full{
-	visibility: visible;
-	bottom: -120px;
-}
+	#fta {
+		visibility: hidden;
+	}
 
-h1#fta {
-	visibility: hidden;
-}
+	#nav-phone-number {
+		visibility: hidden;
+	}
 
+	#nav-list{
+		width: 100%;
+		left: -137px;
+	}
 
-#nav-phone-number {
-	visibility: hidden;
-}
+	.navbar-nav>li {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-#mobile-phone-box{
-	visibility: visible;
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 25%;
-}
-
-#nav-list{
-	width: 100%;
-}
-
-.navbar-nav>li {
-	margin-left: auto;
-	margin-right: auto;
-}
+	#mobile-phone-box {
+		visibility: visible;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 25%;
+	}
 
 }
 
@@ -266,52 +262,38 @@ h1#fta {
 
 @media (min-width: 992px) {
 
-div>a>#logo {
-	position: relative;
-	top: -70px;
-}
+	#logo {
+		position: relative;
+		top: -70px;
+	}
 
-#fta-full {
-	position: relative;
-	top: -100px;
-	right: -50px;
-}
+	#fta-full {
+		position: relative;
+		top: -100px;
+		right: -175px;
+	}
 
-#nav-list {
-	position: absolute;
-	bottom: -120px;
-	left: -220px;
-	padding: 0px 10px 5px 10px;
-}
+	.contact-info {
+		top: 10px;
+	}
 
-#nav-list>li:nth-child(7) {
-	position: relative;
-	
-}
+	#nav-phone-number {
+		visibility: visible;
+	}
 
-ul#nav-list>li {
-	margin: 10px 0px 10px 0px;
-	position: relative;
-}
+	#nav-list {
+		position: absolute;
+		bottom: -120px;
+		padding: 0px 10px 5px 10px;
+	}
 
-.navbar-brand>div>h1 {
-	left: 175px;
-}
+	#nav-list>li {
+		margin: 10px 0px 10px 0px;
+		position: relative;
+	}
 
-
-.contact-info {
-	top: 10px;
-}
-
-
-
-#nav-phone-number {
-	visibility: visible;
-}
-
-
-#mobile-phone-box {
-	visibility: hidden;
+	#mobile-phone-box {
+		visibility: hidden;
 
 }
 }
