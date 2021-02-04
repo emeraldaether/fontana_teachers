@@ -3,6 +3,10 @@
 		
 }
 
+html {
+	width: 100%;
+}
+
 body {
 	font-family: Times New Roman, serif;
 	padding: 0px;
@@ -17,6 +21,8 @@ body {
 	padding-right: 15px;
 	padding-left: 15px;
 }
+
+
 
 .col-xxs-4 {
 	width: 33.33%;
@@ -75,16 +81,16 @@ div.navbar-brand>div {
 
 
 
-
 #collapsable-nav {
-	/*background-color: #95bcf2;*/
 	margin-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .navbar-nav>li {
 	text-align: center;
 	padding: 0px;
-	margin: 0px;
+	margin: 10px auto 0px auto;
 }
 
 .navbar-toggler {
@@ -97,12 +103,25 @@ div.navbar-brand>div {
 
 
 #nav-list {
-	width: 100%;
+	width: 33%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-#nav-list>li {
-	margin: 0px 45px 0px 45px;
 
+#nav-list>li:focus, #nav-list>li:hover {
+	background: #95bcf2;
+	box-shadow: 2px 2px 2px black;
+	cursor: pointer;
+}
+
+
+@media only screen and (max-width: 565px) {
+
+	.navbar-nav>li {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
 
 
@@ -122,7 +141,8 @@ div.navbar-brand>div {
 .contact-info {
 position: absolute;
 top: -10px;
-right: 45px;
+right: 20px;
+font-size: 0.75em;
 
 }
 
@@ -148,8 +168,8 @@ h1#fta {
 	visibility: visible;
 	position: relative;
 	top: -20px;
+	left: 150px;
 }
-
 
 
 
@@ -166,6 +186,11 @@ h1#fta {
 
 /*//////////////SMALL DEVICES//////////////////////*/
 @media only screen and (min-width: 566px) {
+
+.contact-info {
+	font-size: 1em;
+	right: 25px;
+}
 
 h1#fta-full {
 	visibility: hidden;
@@ -213,6 +238,9 @@ h1#fta {
 	width: 25%;
 }
 
+#nav-list{
+	width: 100%;
+}
 
 }
 
@@ -224,19 +252,18 @@ h1#fta {
 #nav-list {
 	position: absolute;
 	bottom: -120px;
-	left: -170px;
+	left: -195px;
 	padding: 0px 10px 5px 10px;
 }
 
 #nav-list>li:nth-child(7) {
 	position: relative;
-	right: -350px;
+	
 }
 
 ul#nav-list>li {
-	margin: 10px 45px 10px 45px;
+	margin: 10px 20px 10px 20px;
 	position: relative;
-	right: -40px;
 }
 
 .navbar-brand>div>h1 {
@@ -263,34 +290,6 @@ ul#nav-list>li {
 
 
 
-
-
-
-
-/*////////////OVERFLOW//////////////*/
-@media only screen and (min-width: 1148px) {
-
-
-
-
-#nav-list>li:nth-child(7) {
-	position: relative;
-	right: 0px;
-}
-
-
-
-}
-
-
 /*//////////////////////////////////////////////*/
 /*////////////////////////////////////////////////*/
 
-
-
-@media only screen and (min-width: 1295px) {
-	ul#nav-list {
-		right: -70px;
-	}
-
-}
