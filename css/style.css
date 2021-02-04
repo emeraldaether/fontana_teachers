@@ -3,12 +3,8 @@
 		
 }
 
-html {
-	width: 100%;
-}
-
 body {
-	font-family: Times New Roman, serif;
+	font-family: Georgia, Times New Roman, serif;
 	padding: 0px;
 	margin: 0px;
 	background-color: #dddddd;
@@ -73,18 +69,37 @@ div.navbar-brand>div {
 .navbar-brand>div>h1 {
 	width: 200px;
 	position: relative;
-	left: 175px;
-	bottom: -30px;
+	left: 150px;
+	bottom: -80px;
 	visibility: hidden;
+	text-shadow: 2px 2px 1px #95bcf2;
 }
 
-
-
+#logo {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+/*////////NAVIGATION///////////*/
+/*///////////////////////////////*/
 
 #collapsable-nav {
 	margin-bottom: 0px;
 	padding-left: 0px;
 	padding-right: 0px;
+}
+
+.navbar-toggler {
+	position: absolute;
+	right: 30px;
+	bottom: -60px;
+	padding: 10px;
+}
+
+#nav-list {
+	width: 33%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .navbar-nav>li {
@@ -93,36 +108,23 @@ div.navbar-brand>div {
 	margin: 10px auto 0px auto;
 }
 
-.navbar-toggler {
-	position: absolute;
-	right: 30px;
-	bottom: 10px;
-	padding: 10px;
-}
-
-
-
-#nav-list {
-	width: 33%;
-	margin-right: auto;
-	margin-left: auto;
-}
-
 
 #nav-list>li:nth-child(even):focus, #nav-list>li:nth-child(even):hover {
 	background: #95bcf2;
 	box-shadow: 2px 2px 2px black;
 	cursor: pointer;
+	color: white;
 }
 
 #nav-list>li:nth-child(odd):focus, #nav-list>li:nth-child(odd):hover {
 	background: #FF706B;
 	box-shadow: 2px 2px 2px black;
 	cursor: pointer;
+	color: white;
 }
 
 
-@media only screen and (max-width: 565px) {
+@media (max-width: 565px) {
 
 	.navbar-nav>li {
 		margin-left: 0px;
@@ -134,11 +136,7 @@ div.navbar-brand>div {
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
 
-#logo {
-	position: absolute;
-	top: -50px;
-	left: 10px;
-}
+
 
 .nav-item-lg {
 	float: left;
@@ -149,6 +147,7 @@ position: absolute;
 top: -10px;
 right: 20px;
 font-size: 0.75em;
+font-weight: bold;
 
 }
 
@@ -168,13 +167,14 @@ font-size: 0.75em;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	box-shadow: 2px 2px 2px black;
 }
 
 h1#fta {
 	visibility: visible;
 	position: relative;
-	top: -20px;
 	left: 150px;
+	bottom: -40px;
 }
 
 
@@ -191,7 +191,7 @@ h1#fta {
 
 
 /*//////////////SMALL DEVICES//////////////////////*/
-@media only screen and (min-width: 566px) {
+@media (min-width: 566px) {
 
 .contact-info {
 	font-size: 1em;
@@ -221,7 +221,7 @@ h1#fta {
 }
 
 /*////////////////////MEDIUM DEVICES///////////////////*/
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
 
 #header-nav {
 	position: relative;
@@ -262,12 +262,23 @@ h1#fta {
 
 /*/////////////////////LARGE SCREENS/////////////////*/
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
+
+div>a>#logo {
+	position: relative;
+	top: -70px;
+}
+
+#fta-full {
+	position: relative;
+	top: -110px;
+	right: -50px;
+}
 
 #nav-list {
 	position: absolute;
 	bottom: -120px;
-	left: -195px;
+	left: -220px;
 	padding: 0px 10px 5px 10px;
 }
 
