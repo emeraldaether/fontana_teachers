@@ -109,8 +109,14 @@ div.navbar-brand>div {
 }
 
 
-#nav-list>li:focus, #nav-list>li:hover {
+#nav-list>li:nth-child(even):focus, #nav-list>li:nth-child(even):hover {
 	background: #95bcf2;
+	box-shadow: 2px 2px 2px black;
+	cursor: pointer;
+}
+
+#nav-list>li:nth-child(odd):focus, #nav-list>li:nth-child(odd):hover {
+	background: #FF706B;
 	box-shadow: 2px 2px 2px black;
 	cursor: pointer;
 }
@@ -217,6 +223,10 @@ h1#fta {
 /*////////////////////MEDIUM DEVICES///////////////////*/
 @media only screen and (min-width: 768px) {
 
+#header-nav {
+	position: relative;
+}
+
 h1#fta-full{
 	visibility: visible;
 }
@@ -242,6 +252,11 @@ h1#fta {
 	width: 100%;
 }
 
+.navbar-nav>li {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 }
 
 
@@ -262,7 +277,7 @@ h1#fta {
 }
 
 ul#nav-list>li {
-	margin: 10px 20px 10px 20px;
+	margin: 10px 0px 10px 0px;
 	position: relative;
 }
 
