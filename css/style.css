@@ -273,7 +273,7 @@ div>a>#logo {
 
 #fta-full {
 	position: relative;
-	
+	top: -100px;
 	right: -50px;
 }
 
