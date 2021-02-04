@@ -10,32 +10,55 @@ body {
 	background-color: #dddddd;
 }
 
+
+/*NAVIGATION BAR*/
+
+
 #header-nav {
 	width: 100%;
 	position: relative;
-	background: #95bcf2;
+	background: white;
 	border: 1px black solid;
-	
+	padding: 0px;	
 }
 
 #header-nav>.container-fluid {
 	padding: 0px;
-	width: 100%;
 	margin: 0px;
+	height: 250px;
 }
+
+
+/*////////////LOGO//////////////////*/
+/*////////////////////////////////////*/
+
 
 div.navbar-brand {
 	height: 100px;
+	position: relative;
+	width: 100%;
 }
 
 div.navbar-brand>div {
 	position: relative;
 	right: -0px;
+	top: -50px;
+}
+
+.navbar-brand>div>h1 {
+	width: 200px;
+	position: relative;
+	left: 175px;
+	bottom: -30px;
 }
 
 
+
+
+
 #collapsable-nav {
-	background-color: #95bcf2;
+	/*background-color: #95bcf2;*/
+	margin-bottom: 0px;
 }
 
 .navbar-nav li {
@@ -47,32 +70,138 @@ div.navbar-brand>div {
 .navbar-toggler {
 	position: absolute;
 	right: 30px;
-	top: 30px;
+	bottom: 10px;
 	padding: 10px;
 }
 
-.navbar-brand>div>h1 {
-	width: 200px;
-	position: relative;
-	left: 120px;
-	top: 20px;
-}
+
 
 #nav-list {
 	width: 100%;
 }
 
-/*////////////LARGE DEVICES//////////////*/
-@media (min-width: 992px) {
-
+#nav-list>li {
+	margin: 0px 45px 0px 45px;
 
 }
 
-/*////////////////////MEDIUM DEVICES///////////////////*/
-@media (min-width: 768px) and (max-width: 991px) {
+
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+
+#logo {
+	position: absolute;
+	top: -50px;
+	left: 10px;
+}
+
+.nav-item-lg {
+	float: left;
+}
+
+.contact-info {
+position: absolute;
+top: 10px;
+right: 45px;
+}
+
+.contact-info>p {
+	margin: 0px;
+}
+
+#nav-phone-number {
+	visibility: hidden;
+}
+
+#mobile-phone-box {
+	visibility: hidden;
+	background: #95bcf2;
+	border: 1px solid black;
+}
+
+h1#fta {
+	visibility: hidden;
+	position: relative;
+	top: -20px;
+}
+
+
+
+/*OVERFLOWING MENU ITEMS*/
+
+@media only screen and (min-width: 992px) and (max-width: 1147px) {
+
+#nav-list>li:nth-child(7) {
+	position: relative;
+	right: -350px;
+}
+
+ul#nav-list>li {
+	margin: 10px 50px 10px 50px;
+	position: relative;
+	right: -40px;
+}
+
+}
+
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+/*///////////////////////////////////////*/
+
+/*////////////LARGE DEVICES//////////////*/
+@media only screen and (min-width: 992px) {
+
 
 .navbar-brand>div>h1 {
-	
+	left: 175px;
+}
+
+
+
+
+
+#nav-list {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	padding: 0px 10px 5px 10px;
+}
+
+#nav-phone-number {
+	visibility: visible;
+}
+
+
+#mobile-phone-box {
+	visibility: hidden;
+
+}
+
+#mobile-phone-box>p {
+	vertical-align: middle;
+}
+
+}
+
+
+/*////////////////////MEDIUM DEVICES///////////////////*/
+@media only screen and (max-width: 991px) {
+
+.contact-info {
+	top: -10px;
+}
+
+#nav-phone-number {
+	visibility: hidden;
+}
+
+#mobile-phone-box{
+	visibility: visible;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -80,7 +209,26 @@ div.navbar-brand>div {
 
 
 /*//////////////SMALL DEVICES//////////////////////*/
-@media (max-width: 767px) {
+@media only screen and (max-width: 768px) {
+
+h1#fta-full {
+	visibility: hidden;
+}
+
+h1#fta {
+	visibility: visible;
+}
+.contact-info {
+	top: -10px;
+}
+
+#mobile-phone-box {
+	visibility: visible;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 
 }
