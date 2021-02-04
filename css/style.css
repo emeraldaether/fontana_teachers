@@ -8,6 +8,7 @@ body {
 	padding: 0px;
 	margin: 0px;
 	background-color: #dddddd;
+	overflow-x: hidden;
 }
 
 
@@ -68,11 +69,12 @@ div.navbar-brand>div {
 
 .navbar-brand>div>h1 {
 	width: 200px;
-	position: relative;
+	position: absolute;
 	left: 150px;
 	bottom: -80px;
 	visibility: hidden;
 	text-shadow: 2px 2px 1px #95bcf2;
+	margin: 0px;
 }
 
 #logo {
@@ -172,9 +174,8 @@ font-weight: bold;
 
 h1#fta {
 	visibility: visible;
-	position: relative;
 	left: 150px;
-	bottom: -40px;
+	bottom: -120px;
 }
 
 
@@ -229,6 +230,7 @@ h1#fta {
 
 h1#fta-full{
 	visibility: visible;
+	bottom: -120px;
 }
 
 h1#fta {
@@ -271,7 +273,7 @@ div>a>#logo {
 
 #fta-full {
 	position: relative;
-	top: -110px;
+	
 	right: -50px;
 }
 
