@@ -13,9 +13,9 @@ body {
 
 .col-xxs-3, .col-xxs-4, .col-xxs-6, .col-xxs-12 {
 	position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .col-xxs-4 {
@@ -152,22 +152,6 @@ h1#fta {
 
 
 
-/*OVERFLOWING MENU ITEMS*/
-
-@media only screen and (min-width: 992px) and (max-width: 1147px) {
-
-#nav-list>li:nth-child(7) {
-	position: relative;
-	right: -350px;
-}
-
-ul#nav-list>li {
-	margin: 10px 45px 10px 45px;
-	position: relative;
-	right: -40px;
-}
-
-}
 
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
@@ -233,11 +217,27 @@ h1#fta {
 }
 
 
-/*////////////LARGE DEVICES//////////////*/
+/*/////////////////////LARGE SCREENS/////////////////*/
+
 @media only screen and (min-width: 992px) {
 
+#nav-list {
+	position: absolute;
+	bottom: -120px;
+	left: -170px;
+	padding: 0px 10px 5px 10px;
+}
 
+#nav-list>li:nth-child(7) {
+	position: relative;
+	right: -350px;
+}
 
+ul#nav-list>li {
+	margin: 10px 45px 10px 45px;
+	position: relative;
+	right: -40px;
+}
 
 .navbar-brand>div>h1 {
 	left: 175px;
@@ -245,18 +245,10 @@ h1#fta {
 
 
 .contact-info {
-
-top: 10px;
-
+	top: 10px;
 }
 
 
-#nav-list {
-	position: absolute;
-	bottom: 0px;
-	left: 30px;
-	padding: 0px 10px 5px 10px;
-}
 
 #nav-phone-number {
 	visibility: visible;
@@ -267,6 +259,38 @@ top: 10px;
 	visibility: hidden;
 
 }
+}
 
+
+
+
+
+
+
+/*////////////OVERFLOW//////////////*/
+@media only screen and (min-width: 1148px) {
+
+
+
+
+#nav-list>li:nth-child(7) {
+	position: relative;
+	right: 0px;
+}
+
+
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*////////////////////////////////////////////////*/
+
+
+
+@media only screen and (min-width: 1295px) {
+	ul#nav-list {
+		right: -70px;
+	}
 
 }
