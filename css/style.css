@@ -102,8 +102,8 @@ body {
 
 .navbar-toggler {
 	position: absolute;
-	right: 30px;
-	bottom: -60px;
+	right: 10px;
+	bottom: -115px;
 	padding: 10px;
 }
 
@@ -133,42 +133,77 @@ body {
 	padding-right: 0px;
 }
 
+#collapsable-nav>.container-fluid {
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-right: 0px;
+}
+
 #nav-list {
 	width: 33%;
-	margin-right: auto;
+	margin-right: 0px;
 	margin-left: auto;
+	background: white;
+	border: 1px solid black;
 }
 
-.navbar-nav>li {
-	text-align: center;
+.navbar-nav>a>li, .navbar-nav>li {
+	text-align: right;
 	padding: 0px;
-	margin: 10px auto 0px auto;
+	margin: 10px 5px 0px auto;
+	padding-right: 5px;					
+	width: auto;
 }
 
+#nav-list>a>li,{
+	color: black;
+/*	text-decoration: none;*/
+	margin-right: 0px;
 
-#nav-list>li:nth-child(even):focus, #nav-list>li:nth-child(even):hover {
-	background: #95bcf2;
+}
+
+#nav-list>a {
+	text-decoration: none;
+	color: black;
+	width: auto;
+	font-size: 0.75em;
+	text-shadow: 1px 0px 0px #999;
+}
+
+#nav-list>a:nth-child(odd):focus, #nav-list>a:nth-child(odd):hover {
+	background-color: #FF706B;
 	box-shadow: 2px 2px 2px black;
-	cursor: pointer;
-	color: white;
 }
 
-#nav-list>li:nth-child(odd):focus, #nav-list>li:nth-child(odd):hover {
-	background: #FF706B;
+#nav-list>a:nth-child(even):focus, #nav-list>a:nth-child(even):hover {
+	background-color: #95bcf2;
 	box-shadow: 2px 2px 2px black;
-	cursor: pointer;
-	color: white;
 }
+
+.active-odd {
+	color: white;
+	background-color: #FF706B;
+	box-shadow: 2px 2px 2px black;
+}
+
+
+.active-even {
+
+}
+
 
 #mobile-phone-box {
 	visibility: visible;
 	background: #95bcf2;
 	border: 1px solid black;
+	position: relative;
+	bottom: -50px;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	box-shadow: 2px 2px 2px black;
+	width: 33%;
 }
 
 /*///////////////////////////////////////*/
@@ -182,13 +217,16 @@ body {
 /*///////////ADJUST SCREEN FOR MOBILE DEVICES///////////////*/
 /*//////////////////////////////////////////////////////////*/
 
-@media (max-width: 565px) {
+@media (max-width: 575px) {
 	
-	.navbar-nav>li {
+	.navbar-nav>a>li {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
 
+	.navbar-toggler {
+		right: 0px;
+	}
 
 }
 
@@ -217,6 +255,10 @@ body {
 		width: 33%;
 	}
 
+	#nav-list {
+		width: 25%;
+	}
+
 
 }
 
@@ -237,14 +279,18 @@ body {
 		visibility: hidden;
 	}
 
-	#nav-list{
-		width: 100%;
-		left: -137px;
+	#collapsable-nav {
+		position: relative;
+	}
+	
+	#nav-list {
+		width: 16.66666667%;
 	}
 
-	.navbar-nav>li {
+	.navbar-nav>a>li {
 		margin-left: auto;
-		margin-right: auto;
+		margin-right: 0px;
+		width: auto;
 	}
 
 	#mobile-phone-box {
@@ -281,15 +327,29 @@ body {
 		visibility: visible;
 	}
 
-	#nav-list {
-		position: absolute;
-		bottom: -120px;
-		padding: 0px 10px 5px 10px;
+	#collapsable-nav {
+		display: inline-block;
 	}
 
-	#nav-list>li {
+	#nav-list {
+		position: absolute;
+		bottom: -140px;
+		left: 0px;
+		padding: 0px 10px 5px 10px;
+		width: 100%;
+		border-top: 0px;
+
+	}
+	
+	#nav-list>a {
+		width: 33.33%;
+		float: left;
+	}
+
+	#nav-list>a>li {
 		margin: 10px 0px 10px 0px;
 		position: relative;
+		float: left;
 	}
 
 	#mobile-phone-box {
@@ -300,6 +360,8 @@ body {
 
 
 
-/*//////////////////////////////////////////////*/
+/*////////////////////////////////////////////////*/
+/*//////////WEBSITE DESIGNED BY ANDREW HELANDER///*/
+/*//////////HELANDER.DESIGNS@GMAIL.COM////////////*/
 /*////////////////////////////////////////////////*/
 
