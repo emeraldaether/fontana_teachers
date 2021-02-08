@@ -1,4 +1,6 @@
-function () {
-	var pageHeading = document.getElementbyId('main-heading');
-	pageHeading.textContent = "Hello There!";
+function setTitle ()
+	{
+		var pageTitle = "Hello!";
+		document.getElementById("mainHeading").value = pageTitle;
+		console.log(this.value)
 }

@@ -42,7 +42,7 @@ body {
 	width: 100%;
 	position: relative;
 	background: white;
-	border: 1px black solid;
+	border: 2px black solid;
 	padding: 0px;	
 }
 
@@ -113,7 +113,8 @@ body {
 	text-align: right;
 }
 
-/**/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
 
 #collapsable-nav {
 	margin-bottom: 0px;
@@ -133,7 +134,7 @@ body {
 	margin-right: 0px;
 	margin-left: auto;
 	background: white;
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 .navbar-nav>li>a, .navbar-nav>a {
@@ -196,6 +197,24 @@ body {
 	width: 33%;
 }
 
+#mobile-phone-box>a {
+	text-decoration: none;
+	color: black;
+}
+
+#main-content {
+	border: 2px solid black;
+	position: relative;
+	top: 70px;
+	box-shadow: 2px 2px 1px black;
+	background: white;
+}
+
+#main-content>p {
+	padding-top: 10px;
+	line-height: 30px;
+
+}
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
@@ -209,20 +228,52 @@ body {
 
 
 @media (max-width: 350px) {
+	
+
+
 	#fta-full {
 		font-size: 0.75em;
 	}
+
+	#main-content>p {
+		line-height: 15px;
+		text-align: justify;
+	}
+
+
 }
 
 
 @media (max-width: 575px) {
 	
+	.navbar-toggler{
+		bottom: -135px;
+	}
+
+	#mobile-phone-box {
+		top: -30px;
+	}
+
 	.navbar-nav>li>a {
 		margin-left: 0px;
 	}
 
+	#header-nav {
+		height: 130px;
+	}
+
+
 	.navbar-toggler {
 		right: 0px;
+	}
+
+	#main-content {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	#main-content>p {
+		text-align: justify;
 	}
 
 }
@@ -336,8 +387,11 @@ body {
 
 	#mobile-phone-box {
 		visibility: hidden;
+	}
 
-}
+	#main-content {
+		top: 90px;
+	}
 }
 
 
