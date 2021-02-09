@@ -8,7 +8,8 @@
  			<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=yes" >
 			<link rel="stylesheet" href="css/bootstrap.min.css">
 			<link rel="stylesheet" href="css/style.css">
-			<script src="js/script.js"></script>
+			<link href="images/fta_logo_small.png" rel="icon" >
+			
 			
 			
 				
@@ -34,9 +35,11 @@
 								<div id="logo"><a href="index.html"><img id="big-logo" alt="Fontana Teacher's Association Logo" src="images/fta_logo.png"><img id="small-logo" alt="Fontana Teacher's Association Logo" src="images/fta_logo_small.png"></a></div>
 								<div><h1 id="fta-full">Fontana Teacher's<br /> Association</h1>
 
-								<button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-expanded="false" aria-controls="collapsable-nav">
+								<!-- <button class="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-expanded="false" aria-controls="collapsable-nav">
 									<span class="navbar-toggler-icon">
-									</span>
+									</span> -->
+
+								<button id="togglerButton" onclick="openNav()"><span class="navbar-toggler-icon"></span></button>
 			
 
 								</button>
@@ -61,12 +64,14 @@
 					
 					</div> 
 						
-							<div id="mobile-phone-box" ><a href="tel:909-829-0940"><p class="text-center">(909) 829-0940</p></a></div>
+							<div id="mobile-phone-box" class="col-xxs-8 col-xs-5 col-sm-3"><a href="tel:909-829-0940"><p class="text-center">(909) 829-0940</p></a></div>
+
 							
 				</nav>
-				<div id="collapsable-nav" class="collapse navbar-collapse col-md-12">
+				<div id="collapsableNav" >
 					<div class="container-fluid">
-						<ul id="nav-list" class="nav navbar-nav">
+						 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+						 	<ul id="nav-list">
 							<li class="nav-item active-odd">
 								<a href="index.html">
 												Home</a></li>
@@ -96,9 +101,10 @@
 			</header>
 		
 
-			<div class="container">
+			<div class="container" id="mainContent">
 				<div class="row">
-					<div id="main-content" class="col-xs-12">
+					<div id="fbFollow" class="col-xxs-10 col-xs-10 col-sm-6 col-lg-5"><p class="text-center">Follow us on Facebook!</p></div>
+					<div id="contentOne" class="col-xs-12">
 						<p><span class="emphasized">The 2020 year marks FTA's 70th anniversary!</span><br />
 
 
@@ -126,6 +132,7 @@ F.T.A. is the exclusive representative of the educators of the Fontana Unified S
 
 			<script src="js/jquery-2.1.4.min.js"></script>
 			<script src="js/bootstrap.min.js"></script>
+			<script src="js/script.js"></script>
 			
 		</body>
 	</html>
