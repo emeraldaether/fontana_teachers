@@ -11,8 +11,8 @@ body {
 	font-family: Georgia, Times New Roman, serif;
 	padding: 0px;
 	margin: 0px;
-	background-color: #e6f9ff;
-	color: #33336a;
+	background: #A1E9F7;
+	color: #1F2533;
 	width: auto;
 }
 
@@ -23,8 +23,8 @@ body {
 #header-nav {
 	width: 100%;
 	position: relative;
-	background: #99e7ff;
-	border: 2px black solid;
+	background-color: #EBF8FF;
+	border: 2px #1F2533 solid;
 	padding: 0px;
 	height: 130px;
 	color: #333344;	
@@ -60,13 +60,13 @@ body {
 	position: absolute;
 	font-family: Comic Sans MS;
 	width: auto;
-	text-shadow: 2px 2px 1px #009ccc;
+	text-shadow: 1px 1px 1px #3E517A;
 	margin: 0px;
 	top: 40px;
 	left: 125px;
 	font-weight: bold;
 	font-variant: small-caps;
-	color: #333344;
+	color: #1F2533;
 }
 
 #logo {
@@ -85,7 +85,7 @@ body {
 	right: 10px;
 	bottom: -135px;
 	padding: 10px;
-	background: transparent;
+	background: #A1E9F7;
 	
 }
 
@@ -100,6 +100,7 @@ body {
 	font-weight: bold;
 	width: auto;
 	display: none;
+	color: #1F2533;
 }
 
 .contact-info>p {
@@ -113,31 +114,36 @@ body {
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
 
-
 #collapsableNav li a {
-	color: #33339f;
+	color: #1F2533;
 	text-decoration: none;
 }
 
 #collapsableNav li a:hover, #collapsable li a:active {
-	background-color: #009ccc;
-	color: #ccccfa;
+	background-color: #3E517A;
+	color: #EBF8FF;
 }
+
+/*/////////////////////////////////////////////////*/
+/*////////////////SIDE NAV WITH OVERLAY////////////*/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
 
 @media (max-width: 991px) {
 
-#collapsableNav {
-	  height: 100%;
-	  width: 0px;
-	  position: fixed;
-	  z-index: 2;
-	  top: 0;
-	  right: 0;
-	  background-color: rgba(229, 248, 255, 0.95);
-	  overflow-x: hidden;
-	  transition: 0.5s;
-	  padding-top: 60px;
-	  list-style: none;
+	#collapsableNav {
+		height: 100%;
+		width: 0px;
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		right: 0;
+		background-color: rgba(161, 233, 247, 0.95);
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+		list-style: none;
 	}
 
 	#collapsableNav>.container-fluid {
@@ -146,14 +152,14 @@ body {
 	}
 
 	#collapsableNav li a{
-	  padding: 8px 16px 8px 16px;
-	  text-align: center;
-	  text-decoration: none;
-	  font-size: 25px;
-	  color: #333333;
-	  display: block;
-	  transition: 0.3s;
-	  margin-left: 0px;
+	    padding: 8px 16px 8px 16px;
+	    text-align: center;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #1F2533;
+	    display: block;
+	    transition: 0.3s;
+	    margin-left: 0px;
 	
 	}
 
@@ -167,31 +173,39 @@ body {
 	.closebtn {
 		position: absolute;
 	    top: 5px;
-	    right: 15px;
+	    left: 15px;
 	    transition: 0.5s;
-	    color: #34349f;
+	    color: #1F2533;
 	    text-decoration: none;
 	    font-size: 1.5em;
 	}
 
 }
 
+
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////*/
+
+
 #mobile-phone-box {
 	visibility: visible;
-	background: #99e7ff;
-	border: 1px solid black;
+	background-color: #EBF8FF;
+	border: 1px solid #1F2533;
 	position: relative;
 	bottom: 25px;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	box-shadow: 2px 2px 2px black;
+	box-shadow: 2px 2px 2px #1F2533;
 }
 
 #mobile-phone-box>a {
 	text-decoration: none;
-	color: #333399;
+	color: #1F2533;
 	font-size: 1em;
 }
 
@@ -201,10 +215,9 @@ body {
 
 #fbFollow {
 	font-size: 1.25em;
-	color: #33336f;
 	margin: 0px auto 30px auto;
-	border: 1px solid black;
-	background: #99e7ff;
+	border: 1px solid #1F2533;
+	background-color: #EBF8FF;
 	box-shadow: #002733 2px 2px 2px;
 }
 
@@ -214,9 +227,9 @@ body {
 }
 
 #contentOne {
-	border: 2px solid black;
-	box-shadow: 2px 2px 1px black;
-	background: #99e7ff;
+	border: 2px solid #1F2533;
+	box-shadow: 2px 2px 1px #1F2533;
+	background-color: #EBF8FF;
 }
 
 #contentOne>p {
@@ -232,11 +245,39 @@ body {
 }
 
 #footer {
+	position: absolute;
+	bottom:0px;
+	width: 100%;
 	height: 200px;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border-top: 2px solid #1F2533;
+	border-bottom: 2px solid #1F2533;
 	margin-top: 300px;
-	background-color: #99e7ff;
+	background-color: #3E517A;
+}
+
+#footer .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#footer .row>div {
+	margin-top: 20px;
+}
+
+#footer a {
+	font-size: 1.25em;
+	text-decoration: none;
+	color: #EBF8FF;
+	padding: 10px 50px 10px 50px;
+}
+
+#footer a:hover, #footer a:active {
+	background-color: #EBF8FF;
+	color: #3E517A;
+}
+
+#footer p {
+	margin: 0px;
 }
 
 #overlay {
@@ -329,7 +370,7 @@ body {
 
 
 	#togglerButton {
-		right: -25px;
+		right: -10px;
 		bottom: -85px;
 	}
 
@@ -347,7 +388,10 @@ body {
 	#contentOne>p {
 	}
 
-
+	#footer .row>div {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
 
 }
 
@@ -368,6 +412,10 @@ body {
 		width: 83.333334%;
 	}
 
+	.col-xxs-12 {
+		width: 100%;
+	}
+
 	#fbFollow {
 		font-size: 0.75em;
 	}
@@ -382,6 +430,10 @@ body {
 	}
 	
 
+	#footer .row>div {
+		padding-right: 50px;
+		padding-left: 50px;
+	}
 
 
 }
@@ -436,6 +488,18 @@ body {
 		font-size: 2em;
 	}
 
+
+
+	#footer .row>div {
+		margin-top: 30px;
+	}
+
+
+	#footer>div.container-fluid {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
 }
 
 /*/////////////////////////////////////////////////////*/
@@ -463,6 +527,7 @@ body {
 	#logo {
 		position: relative;
 		top: -14px;
+		width: 100px;
 		
 	}
 
@@ -483,10 +548,10 @@ body {
 		left: 0px;
 		padding: 0px 10px 5px 10px;
 		width: 100%;
-		border: 2px solid black;
+		border: 2px solid #1F2533;
 		border-top: 0px;
 		flex-direction: row;
-		background: #99e7ff;
+		background-color: #EBF8FF;
 		list-style: none;
 	}
 	
