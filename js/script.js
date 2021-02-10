@@ -5,6 +5,7 @@ var pageTitle = document.title
 function openNav () {
 var screenWidth = window.innerWidth;
 console.log(screenWidth);
+document.getElementById("overlay").style.display = "block";
 if (screenWidth > 768) 	{
 	navBar.style.width = "200px";
 
@@ -18,6 +19,7 @@ if (screenWidth > 768) 	{
 
 function closeNav () {
 	navBar.style.width = "0px";
+	document.getElementById("overlay").style.display = "none";
 }
 
 navToggler.addEventListener("blur", closeNav)
