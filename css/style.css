@@ -113,25 +113,22 @@ body {
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
 
-/*#collapsable-nav {
-	margin-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-	transition: 0.3s;
+
+#collapsableNav li a {
+	color: #33339f;
+	text-decoration: none;
 }
 
-#collapsable-nav>.container-fluid {
-	margin-right: 0px;
-	margin-left: 0px;
-	padding-right: 0px;
-	padding-left: 0px;
-}*/
+#collapsableNav li a:hover, #collapsable li a:active {
+	background-color: #3333af;
+	color: #ccccfa;
+}
 
 @media (max-width: 991px) {
 
 #collapsableNav {
 	  height: 100%;
-	  width: 0;
+	  width: 0px;
 	  position: fixed;
 	  z-index: 1;
 	  top: 0;
@@ -144,18 +141,26 @@ body {
 	  list-style: none;
 	}
 
+	#collapsableNav>.container-fluid {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
 	#collapsableNav li a{
-	  padding: 8px 8px 8px 32px;
+	  padding: 8px 16px 8px 16px;
+	  text-align: center;
 	  text-decoration: none;
 	  font-size: 25px;
 	  color: #333333;
 	  display: block;
 	  transition: 0.3s;
+	  margin-left: 0px;
 	
 	}
 
 	#nav-list {
 		list-style: none;
+		padding-left: 0px;
 	}
 
 
@@ -243,10 +248,6 @@ body {
 
 /*///////////ADJUST SCREEN FOR MOBILE DEVICES///////////////*/
 /*//////////////////////////////////////////////////////////*/
-
-
-
-
 
 @media (max-width: 575px) {
 	
@@ -489,9 +490,6 @@ body {
 	#mobile-phone-box {
 		visibility: hidden;
 	}
-
-
-
 	
 }
 

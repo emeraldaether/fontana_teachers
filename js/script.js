@@ -1,15 +1,24 @@
-var navBar = document.getElementById("collapsableNav");
+var navBar = document.getElementById("collapsableNav")
 var navToggler = document.getElementById("togglerButton")
-
-console.log(navBar);
+var pageTitle = document.title
 
 function openNav () {
-	navBar.style.width = "250px";
-	console.log(navBar.style.width);
+var screenWidth = window.innerWidth;
+console.log(screenWidth);
+if (screenWidth > 768) 	{
+	navBar.style.width = "200px";
+
 }
+		else {
+			navBar.style.width = "175px";
+		}
+}
+
+
 
 function closeNav () {
 	navBar.style.width = "0px";
 }
 
 navToggler.addEventListener("blur", closeNav)
+
