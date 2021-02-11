@@ -11,7 +11,7 @@ body {
 	font-family: Georgia, Times New Roman, serif;
 	padding: 0px;
 	margin: 0px;
-	background: #A1E9F7;
+	background: #D7DCEA;
 	color: #1F2533;
 	width: auto;
 }
@@ -526,7 +526,7 @@ body {
 	#logo {
 		position: relative;
 		top: -14px;
-		
+		width: 100px;
 	}
 
 	#fta-full {
