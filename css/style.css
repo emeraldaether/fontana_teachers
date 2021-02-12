@@ -117,6 +117,7 @@ body {
 	color: #1F2533;
 	text-decoration: none;
 	font-weight: 600;
+
 }
 
 #collapsableNav li a:hover, #collapsable li a:active {
@@ -155,7 +156,7 @@ body {
 	    padding: 8px 16px 8px 16px;
 	    text-align: center;
 	    text-decoration: none;
-	    font-size: 25px;
+	    font-size: 0.75em;
 	    color: #1F2533;
 	    display: block;
 	    transition: 0.3s;
@@ -280,6 +281,26 @@ body {
 	margin: 0px;
 }
 
+.footerLink {
+	position: absolute;
+	bottom: 210px;
+	left: -10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#ctaImg:hover {
+	background-color: #EBF8FF; 
+}
+
+#ctaImg {
+	background: url('../images/cta-logo.png') no-repeat center;
+	width: auto;
+	text-align: center;
+	height: 50px;
+	overflow: visible;
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -361,8 +382,13 @@ body {
 		font-size: 1em;
 	}
 
+	.navbar-nav>li {
+		font-size: 0.5em
+	}
+
 	.navbar-nav>li>a {
 		margin-left: 0px;
+		;
 	}
 
 	#header-nav {
@@ -387,6 +413,12 @@ body {
 	}
 
 	#contentOne>p {
+	}
+
+	.footerLink {
+		padding-left: 60px;
+		padding-right: 60px;
+		width: 100%;
 	}
 
 	#footer .row>div {
@@ -431,6 +463,11 @@ body {
 	}
 	
 
+	.footerLink {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
 	#footer .row>div {
 		padding-right: 50px;
 		padding-left: 50px;
@@ -455,6 +492,11 @@ body {
 		margin-top: 10px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.footerLink {
+		padding-right: 30px;
+		padding-left: 30px;
 	}
 
 
@@ -489,6 +531,10 @@ body {
 		font-size: 2em;
 	}
 
+	.footerLink {
+		padding-right: 75px;
+		padding-left: 75px;
+	}
 
 
 	#footer .row>div {
@@ -574,6 +620,10 @@ body {
 		visibility: hidden;
 	}
 	
+	.footerLink {
+		padding-right: 150px;
+		padding-left: 150px;
+	}
 }
 
 
