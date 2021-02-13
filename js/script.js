@@ -2,16 +2,17 @@ var navBar = document.getElementById("collapsableNav")
 var navToggler = document.getElementById("togglerButton")
 var pageTitle = "Home"
 var overlay = document.getElementById("overlay")
-
-
+var screenHeight = window.innerHeight
 var getObject = new XMLHttpRequest()
-
+console.log(screenHeight)
 var boardMembers = function() {
 var boardMembersUrl = getObject.open("GET", "js/board.json", true);
 getObject.send();
 console.log (boardMembersUrl);
 responseHandler (JSON.parse(request.responseText));
 }
+
+
 
 
 document.title = pageTitle
@@ -37,18 +38,22 @@ if (screenWidth > 566) 	{
 }
 
 
-
 function closeNav () {
 	navBar.style.width = "0px";
 	overlay.style.display = "none";
 }
 
+
+
+
 function buildPage (snippetHtml, pageTitle, pageId){
-	document.title = pageTitle
-	$(".nav-link").removeClass('active')
-	$(pageId).addClass('active')
+	closeNav();
+	document.title = pageTitle;
+	$(".nav-link").removeClass('active');
+	$(pageId).addClass('active');
 $.get(snippetHtml, function( data ) {
   $( "#mainContent" ).html( data );
 });}
 console.log(overlay)
 overlay.addEventListener("click", closeNav)
+
