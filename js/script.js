@@ -16,7 +16,7 @@ var pageTitle = "Home"
 document.title = pageTitle
 // console.log(boardMembers[1].name)
 
-$.get('../snippets/home-snippet.html', function( data ) {
+$.get('snippets/home-snippet.html', function( data ) {
   $( "#mainContent" ).html( data );
   
 });
