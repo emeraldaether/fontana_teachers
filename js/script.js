@@ -1,9 +1,28 @@
 var navBar = document.getElementById("collapsableNav")
 var navToggler = document.getElementById("togglerButton")
 var pageTitle = "Home"
-document.title = pageTitle
 
-console.log(pageTitle)
+
+// var getObject = new XMLHttpRequest()
+
+// var boardMembers = function() {
+// var boardMembersUrl = getObject.open("GET", "js/board.json", true);
+// getObject.send();
+// console.log (boardMembersUrl);
+// responseHandler (JSON.parse(request.responseText));
+// }
+
+
+document.title = pageTitle
+// console.log(boardMembers[1].name)
+
+$.get('../snippets/home-snippet.html', function( data ) {
+  $( "#mainContent" ).html( data );
+  
+});
+
+$("#homeLink").addClass("active");
+
 function openNav () {
 var screenWidth = window.innerWidth;
 console.log(screenWidth);
@@ -26,3 +45,12 @@ function closeNav () {
 
 navToggler.addEventListener("blur", closeNav)
 
+function buildPage (snippetHtml, pageTitle, pageId){
+	document.title = pageTitle
+	$(".nav-link").removeClass('active')
+	$(pageId).addClass('active')
+$.get(snippetHtml, function( data ) {
+  $( "#mainContent" ).html( data );
+  console.log(pageTitle)
+  console.log(pageId)
+});}
