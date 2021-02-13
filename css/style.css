@@ -176,8 +176,6 @@ body {
 		padding-left: 0px;
 	}
 
-
-
 	.closebtn {
 		position: absolute;
 	    top: 5px;
@@ -203,7 +201,7 @@ body {
 	background-color: #EBF8FF;
 	border: 1px solid #1F2533;
 	position: relative;
-	bottom: 25px;
+	bottom: 80px;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
@@ -264,7 +262,7 @@ body {
 	height: 200px;
 	border-top: 2px solid #1F2533;
 	border-bottom: 2px solid #1F2533;
-	margin-top: 150px;
+	margin-top: 300px;
 	background-color: #3E517A;
 }
 
@@ -281,7 +279,6 @@ body {
 	font-size: 1.25em;
 	text-decoration: none;
 	color: #EBF8FF;
-	padding: 10px 50px 10px 50px;
 }
 
 #footer a:hover, #footer a:active {
@@ -293,40 +290,42 @@ body {
 	margin: 0px;
 }
 
-/*.footerLink {
-	position: absolute;
-	bottom: 210px;
-	padding-left: 50px;
-	padding-right: 50px;
+.footerLink>div {
+	position: relative;
+	top: -250px;
+	height: 70px;
+	width: 100%;
+
 }
 
-.footerLink:nth-child(1) {
-	left: -10px;
+.footerLink>div>a>div {
+	height: 100%;
+	width: 100%;
+	float: left;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 35px;	
+
 }
 
-.footerLink:nth-child(2) {
-	right: 30px;
-}*/
+#ctaImg {
+	background: url('../images/cta-logo.png') no-repeat center;
+	
+
+}
+
+#neaImg {
+	background: url("../images/nea-logo.png") no-repeat center;
+	
+}
+
 
 #ctaImg:hover, #neaImg:hover {
 	background-color: #EBF8FF; 
 }
 
-/*#ctaImg {
-	background: url('../images/cta-logo.png') no-repeat center;
-	width: auto;
-	text-align: center;
-	height: 70px;
-	overflow: visible;
-}
-
-#neaImg {
-	background: url('../images/nea-logo.png') no-repeat center;
-	width: auto;
-	text-align: center;
-	height: 70px;
-}
-*/
 #overlay {
   position: fixed;
   display: none;
@@ -400,10 +399,6 @@ body {
 		left: 0px;
 	}
 
-	#mobile-phone-box {
-		top: -80px;
-	}
-
 	#mobile-phone-box>a {
 		font-size: 1em;
 	}
@@ -442,27 +437,6 @@ body {
 	#contentOne>p {
 	}
 
-	.footerLink {
-		padding-left: 60px;
-		padding-right: 60px;
-		width: 83.3334%;
-		left: 10px;
-	}
-
-	.footerLink:nth-child(1) {
-		bottom:300px;
-		left:15px;
-		
-	}
-
-	.footerLink:nth-child(2) {
-		right: 10px;
-	}
-
-	#footer .row>div {
-		padding-left: 100px;
-		padding-right: 100px;
-	}
 
 }
 
@@ -501,33 +475,6 @@ body {
 	}
 	
 
-	.footerLink {
-		padding-left: 0px;
-		padding-right: 0px;
-		margin-right: 0px;
-		margin-left: 0px;
-		
-	}
-
-	.footerLink:nth-child(1) {
-		left: 15px;
-	}
-
-	.footerLink:nth-child(2) {
-		left: 20px;
-	}
-
-
-	#neaImg {
-		margin-right: 10px;
-	}
-
-	#footer .row>div {
-		padding-right: 50px;
-		padding-left: 50px;
-	}
-
-
 }
 
 /*/////////////////////////////////////////////////*/
@@ -547,13 +494,6 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 	}
-
-	.footerLink {
-		width: 50%;
-		padding-right: 30px;
-		padding-left: 30px;
-	}
-
 
 }
 
@@ -586,21 +526,12 @@ body {
 		font-size: 2em;
 	}
 
-	.footerLink {
-		
-		padding-right: 75px;
-		padding-left: 75px;
-	}
-
-
-	#footer .row>div {
-		margin-top: 30px;
-	}
-
-
-	#footer>div.container-fluid {
-		padding-left: 0px;
-		padding-right: 0px;
+	.footerLink>div {
+		top: -150px;
+		width:50%;
+		float: left;
+		padding-right: 60px;
+		padding-left: 60px;
 	}
 
 }
@@ -685,11 +616,11 @@ body {
 		top: -80px;
 	}
 
-
-	.footerLink {
-		padding-right: 130px;
-		padding-left: 130px;
+	.footerLink>div {
+		padding-right: 110px;
+		padding-left: 110px;
 	}
+
 }
 
 

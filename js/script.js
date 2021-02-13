@@ -1,16 +1,17 @@
 var navBar = document.getElementById("collapsableNav")
 var navToggler = document.getElementById("togglerButton")
 var pageTitle = "Home"
+var overlay = document.getElementById("overlay")
 
 
-// var getObject = new XMLHttpRequest()
+var getObject = new XMLHttpRequest()
 
-// var boardMembers = function() {
-// var boardMembersUrl = getObject.open("GET", "js/board.json", true);
-// getObject.send();
-// console.log (boardMembersUrl);
-// responseHandler (JSON.parse(request.responseText));
-// }
+var boardMembers = function() {
+var boardMembersUrl = getObject.open("GET", "js/board.json", true);
+getObject.send();
+console.log (boardMembersUrl);
+responseHandler (JSON.parse(request.responseText));
+}
 
 
 document.title = pageTitle
@@ -25,10 +26,9 @@ $("#homeLink").addClass("active");
 
 function openNav () {
 var screenWidth = window.innerWidth;
-console.log(screenWidth);
-document.getElementById("overlay").style.display = "block";
-if (screenWidth > 768) 	{
-	navBar.style.width = "200px";
+overlay.style.display = "block";
+if (screenWidth > 566) 	{
+	navBar.style.width = "300px";
 
 }
 		else {
@@ -40,10 +40,8 @@ if (screenWidth > 768) 	{
 
 function closeNav () {
 	navBar.style.width = "0px";
-	document.getElementById("overlay").style.display = "none";
+	overlay.style.display = "none";
 }
-
-navToggler.addEventListener("blur", closeNav)
 
 function buildPage (snippetHtml, pageTitle, pageId){
 	document.title = pageTitle
@@ -51,6 +49,6 @@ function buildPage (snippetHtml, pageTitle, pageId){
 	$(pageId).addClass('active')
 $.get(snippetHtml, function( data ) {
   $( "#mainContent" ).html( data );
-  console.log(pageTitle)
-  console.log(pageId)
 });}
+console.log(overlay)
+overlay.addEventListener("click", closeNav)
