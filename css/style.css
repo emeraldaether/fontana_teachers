@@ -8,7 +8,7 @@
 /*//////////////////////////////////////////////////////*/
 
 body {
-	font-family: Georgia, Times New Roman, serif;
+	font-family: Rubik, Georgia, Times New Roman, serif;
 	padding: 0px;
 	margin: 0px;
 	background: #D7DCEA;
@@ -59,9 +59,9 @@ body {
 
 .navbar-brand>div>h1 {
 	position: absolute;
-	font-family: Lora, san-serif;
+	font-family: Rubik, san-serif;
 	width: auto;
-	text-shadow: 2px 1px 2px #1F2533;
+	text-shadow: 2px 1px 1px #1F2533;
 	margin: 0px;
 	top: 40px;
 	left: 125px;
@@ -101,6 +101,7 @@ body {
 	width: auto;
 	display: none;
 	color: #1F2533;
+	font-family: 'Noto Serif JP', serif;
 }
 
 .contact-info>p {
@@ -243,7 +244,9 @@ body {
 	background-color: #EBF8FF;
 }
 
-#contentOne>p {
+#contentOne p {
+	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 10px;
 	line-height: 30px;
 
@@ -424,12 +427,11 @@ body {
 
 	#mainContent {
 		width: auto;
-		margin-right: 20px;
-		margin-left: 20px;
+
 
 	}
 
-	#contentOne {
+	#mainContent>div {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
