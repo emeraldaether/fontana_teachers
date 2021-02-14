@@ -5,12 +5,12 @@ var overlay = document.getElementById("overlay")
 var screenHeight = window.innerHeight
 var getObject = new XMLHttpRequest()
 
-var boardMembers = function() {
-	var boardMembersUrl = getObject.open("GET", "js/board.json", true);
-	getObject.send();
-	console.log (boardMembersUrl);
-	JSON.parse(request.responseText);
-}
+// var boardMembers = function() {
+// 	var boardMembersUrl = getObject.open("GET", "js/board.json", true);
+// 	getObject.send();
+// 	console.log (boardMembersUrl);
+// 	JSON.parse(request.responseText);
+// }
 
 
 document.title = pageTitle
@@ -48,7 +48,7 @@ $.get(snippetHtml, function( data ) {
   $( "#mainContent" ).html( data );
 });}
 
-
-console.log(overlay)
 overlay.addEventListener("click", closeNav)
+
+
 

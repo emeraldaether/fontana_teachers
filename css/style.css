@@ -197,31 +197,6 @@ body {
 /*/////////////////////////////////////////////////*/
 
 
-#mobile-phone-box {
-	visibility: visible;
-	background-color: #EBF8FF;
-	border: 1px solid #1F2533;
-	position: relative;
-	bottom: 80px;
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	box-shadow: 2px 2px 2px #1F2533;
-	padding-top:5px;
-	padding-bottom:5px;
-}
-
-#mobile-phone-box>a {
-	text-decoration: none;
-	color: #1F2533;
-	font-size: 1em;
-}
-
-#mobile-phone-box p {
-	margin-bottom:0px;
-}
-
 #mainContent {
 	margin-top: 75px;
 	min-height: 50vh;
@@ -229,19 +204,30 @@ body {
 
 #mainContent>.row {
 	margin-top: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-#fbFollow {
-	font-size: 1.25em;
-	margin: 0px auto 30px auto;
-	border: 1px solid #1F2533;
+#mainContent .heading {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+#mainContent .heading>h1, #mainContent .heading>h1>a {
+	color: #3E517A;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#mainContent .heading>h1>a {
+    padding: 10px 50px 10px 50px;
+
+}
+
+#mainContent .heading>h1>a:hover, #mainContent .heading>h1>a:active {
 	background-color: #EBF8FF;
-	box-shadow: #002733 2px 2px 2px;
-}
-
-#fbFollow>p {
-		margin-top: 5px;
-		margin-bottom: 5px
+	box-shadow: 2px 2px 1px #1F2533;
 }
 
 #contentOne {
@@ -258,7 +244,7 @@ body {
 
 }
 
-.emphasized {
+p .emphasized {
 	font-size: 1.5em;
 	font-variant: small-caps;
 	text-align: center;
@@ -284,8 +270,11 @@ body {
 	margin-top: 20px;
 }
 
+#footer .row:nth-child(1){
+	height: 0px;
+}
+
 #footer a {
-	font-size: 1.25em;
 	text-decoration: none;
 	color: #EBF8FF;
 }
@@ -293,6 +282,7 @@ body {
 #footer a:hover, #footer a:active {
 	background-color: #EBF8FF;
 	color: #3E517A;
+
 }
 
 #footer p {
@@ -333,6 +323,19 @@ body {
 
 #ctaImg:hover, #neaImg:hover {
 	background-color: #EBF8FF; 
+	box-shadow: 2px 2px 1px #1F2533;
+}
+
+#smallFooterLink {
+	margin-top: 0px;
+	vertical-align: middle;
+}
+
+#copyTag {
+	font-size: 0.5em;
+	color: #EBF8FF;
+	padding-top: 50px;
+	padding-bottom: 20px;
 }
 
 #overlay {
@@ -408,12 +411,9 @@ body {
 		left: 0px;
 	}
 
-	#mobile-phone-box>a {
-		font-size: 1em;
-	}
-
-	.navbar-nav>li {
-		font-size: 0.5em
+	#nav-list>li {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	.navbar-nav>li>a {
@@ -433,13 +433,10 @@ body {
 
 	#mainContent {
 		width: auto;
-
-
 	}
 
-	#mainContent>div {
-		padding-left: 10px;
-		padding-right: 10px;
+	.heading>h1 {
+		font-size: 1em;
 	}
 
 	#contentOne>p {
@@ -469,10 +466,6 @@ body {
 		width: 100%;
 	}
 
-	#fbFollow {
-		font-size: 0.75em;
-	}
-
 	#mainContent {
 		margin-right: 10px;
 		margin-left: 10px;
@@ -482,6 +475,10 @@ body {
 		line-height: 25px;
 	}
 	
+	#mainContent .heading>h1 a {
+		padding: 10px;
+	}
+
 
 }
 
@@ -496,12 +493,6 @@ body {
 @media (min-width: 566px) {
 
 
-	#mobile-phone-box {
-		visibility: visible;
-		margin-top: 10px;
-		margin-left: auto;
-		margin-right: auto;
-	}
 
 }
 
@@ -522,16 +513,6 @@ body {
 		margin-left: auto;
 		margin-right: 0px;
 		width: auto;
-	}
-
-	#mobile-phone-box {
-		visibility: visible;
-		margin-top: 10px;
-		
-	}
-
-	#fbFollow {
-		font-size: 2em;
 	}
 
 	.footerLink>div {
@@ -611,23 +592,20 @@ body {
 		display: inline;
 	}
 
-	#mobile-phone-box {
-		visibility: hidden;
-	}
-	
 	#mainContent {
 		margin-top: 150px;
 	}
 
-	#fbFollow {
-		position: relative;
-		top: -80px;
+
+	#phoneLink {
+		display: none;
 	}
 
 	.footerLink>div {
 		padding-right: 110px;
 		padding-left: 110px;
 	}
+
 
 }
 
