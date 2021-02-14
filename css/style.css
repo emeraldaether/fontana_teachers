@@ -208,12 +208,18 @@ body {
 	margin-right: auto;
 	text-align: center;
 	box-shadow: 2px 2px 2px #1F2533;
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 #mobile-phone-box>a {
 	text-decoration: none;
 	color: #1F2533;
 	font-size: 1em;
+}
+
+#mobile-phone-box p {
+	margin-bottom:0px;
 }
 
 #mainContent {
