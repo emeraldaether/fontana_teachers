@@ -270,7 +270,7 @@ p .emphasized {
 	margin-top: 20px;
 }
 
-#footer .row:nth-child(1){
+#footer .row:nth-child(1), #footer .row:nth-child(1)>div{
 	height: 0px;
 }
 
@@ -436,7 +436,7 @@ p .emphasized {
 	}
 
 	.heading>h1 {
-		font-size: 1em;
+		font-size: 1.25em;
 	}
 
 	#contentOne>p {
@@ -475,6 +475,10 @@ p .emphasized {
 		line-height: 25px;
 	}
 	
+	.heading>h1 {
+		font-size: 1em;
+	}
+
 	#mainContent .heading>h1 a {
 		padding: 10px;
 	}
