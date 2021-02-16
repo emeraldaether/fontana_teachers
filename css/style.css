@@ -26,7 +26,7 @@ body {
 	background-color: #EBF8FF;
 	border: 2px #1F2533 solid;
 	padding: 0px;
-	height: 130px;
+	height: 150px;
 	color: #1F2533;	
 }
 
@@ -72,7 +72,7 @@ body {
 
 #logo {
 	position: absolute;
-	top: -20px;
+	top: -21px;
 	left: 5px;
 }
 
@@ -84,7 +84,7 @@ body {
 #togglerButton {
 	position: absolute;
 	right: 10px;
-	bottom: -135px;
+	bottom: -160px;
 	padding: 10px;
 	background: #C9DBE3
 }
@@ -109,6 +109,12 @@ body {
 	text-align: right;
 }
 
+#estDate>h4 {
+    position: absolute;
+    top: 120px;
+    left: 125px;
+    font-size: 2vw;
+}
 
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
@@ -228,6 +234,7 @@ body {
 #mainContent .heading>h1>a:hover, #mainContent .heading>h1>a:active {
 	background-color: #EBF8FF;
 	box-shadow: 2px 2px 1px #1F2533;
+
 }
 
 #contentOne {
@@ -338,6 +345,16 @@ p .emphasized {
 	padding-bottom: 20px;
 }
 
+#googleMap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px;
+}
+
+#googleMap>iframe {
+	border: 1px solid #1F2533;
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -401,6 +418,16 @@ p .emphasized {
 		top: 35px;
 		left: 50px;
 		text-shadow: 1px 1px #1F2533;
+	}
+
+	#estDate {
+		top: 0px;
+	}
+
+	#estDate>h4 {
+		top: 30px;
+		left: 140px;
+		font-size: 3vw;
 	}
 
 	#big-logo {
@@ -519,6 +546,7 @@ p .emphasized {
 		width: auto;
 	}
 
+
 	.footerLink>div {
 		top: -150px;
 		width:50%;
@@ -553,12 +581,12 @@ p .emphasized {
 
 	#logo {
 		position: relative;
-		top: -14px;
+		top: -25px;
 		width: 100px;
 	}
 
 	#fta-full {
-		top: -70px;
+		top: -77px;
 	}
 	
 	.contact-info {
@@ -568,9 +596,13 @@ p .emphasized {
 		top: 10px;
 	}
 
+	#estDate>h4 {
+    	top: 10px;
+	}
+	
 	#nav-list {
 		position: absolute;
-		top: 125px;
+		top: 150px;
 		left: 0px;
 		padding: 0px 10px 5px 10px;
 		width: 100%;
@@ -600,6 +632,10 @@ p .emphasized {
 		margin-top: 150px;
 	}
 
+	#googleMap {
+		width: 600px;
+	}
+	
 
 	#phoneLink {
 		display: none;

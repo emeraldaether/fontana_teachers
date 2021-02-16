@@ -3,15 +3,39 @@ var navToggler = document.getElementById("togglerButton")
 var pageTitle = "Home"
 var overlay = document.getElementById("overlay")
 var screenHeight = window.innerHeight
-var getObject = new XMLHttpRequest()
+var boardUrl = "board.json"
 
-// var boardMembers = function() {
-// 	var boardMembersUrl = getObject.open("GET", "js/board.json", true);
-// 	getObject.send();
-// 	console.log (boardMembersUrl);
-// 	JSON.parse(request.responseText);
-// }
+window.addEventListener("resize", function (){
+	if (document.documentElement.clientWidth > 992){
+		overlay.style.display = "none"
+		navBar.style.width = "0px"
+	}
+})
 
+function getRequestObject() {
+	if (global.XMLHttpRequest) {
+		return (new XMLHttpRequest());
+	};
+}
+
+var sendGetRequest =  function(requestUrl, responseHandler, isJsonResponse) {
+    var request = getRequestObject();
+    request.onreadystatechange = 
+      function() { 
+        handleResponse(request, 
+                       responseHandler,
+                       isJsonResponse); 
+      };
+    request.open("GET", requestUrl, true);}
+
+var buildBoardPage = function (board) {
+	sendGetRequest(boardUrl, function (html) {
+		for (i=0; i < board.length; i++) {
+			html += "<h1>" + board(i).name + "</h1>";
+		}
+		document.getElementById('mainContent').innerHtml = html;
+	})
+}
 
 document.title = pageTitle
 
@@ -48,7 +72,7 @@ $.get(snippetHtml, function( data ) {
   $( "#mainContent" ).html( data );
 });}
 
-overlay.addEventListener("click", closeNav)
+overlay.addEventListener("click", closeNav);
 
-
+var navHeading = document.getElementById("fta-full");
 
