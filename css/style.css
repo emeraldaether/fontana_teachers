@@ -16,6 +16,12 @@ body {
 	width: auto;
 }
 
+.line {
+	height: 1px;
+	width: 75%;
+	border-top: 2px solid #1F2533;
+	margin: 50px auto;
+}
 
 /*NAVIGATION BAR*/
 
@@ -114,6 +120,7 @@ body {
     top: 120px;
     left: 125px;
     font-size: 2vw;
+    color: #1F2533;
 }
 
 /*/////////////////////////////////////////////////*/
@@ -129,12 +136,7 @@ body {
 
 }
 
-#collapsableNav li a:hover, #collapsable li a:active {
-	background-color: #3E517A;
-	color: #EBF8FF;
-}
-
-#collapsableNav li a.active {
+#collapsableNav li a:hover, #collapsable li a:active, #collapsableNav li a.active {
 	background-color: #3E517A;
 	color: #EBF8FF;
 }
@@ -203,6 +205,12 @@ body {
 /*/////////////////////////////////////////////////*/
 
 
+.infoBox a {
+	border: 2px solid #1F2533;
+	background: #EBF8FF;
+	text-shadow: 1px 1px 1px #1F2533;
+}
+
 #mainContent {
 	margin-top: 75px;
 	min-height: 50vh;
@@ -210,8 +218,6 @@ body {
 
 #mainContent>.row {
 	margin-top: 80px;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 #mainContent .heading {
@@ -257,6 +263,49 @@ p .emphasized {
 	text-align: center;
 }
 
+#googleMap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+}
+
+#googleMap>iframe {
+	border: 2px solid #1F2533;
+}
+
+	#contactBox>div {
+		text-align: right;
+		margin-right: auto;
+		margin-left: auto;
+}
+
+	#contactBox>div>div {
+		margin-bottom: 10px;
+	}
+
+	.inputTitle {
+		margin-right: 20px;
+	}
+
+	#subjectInput {
+		width: 50%;
+		min-width: 200px;
+	}
+
+
+
+#messageInput {
+	height: 300px;
+	width: 100%;
+	max-width: 450px;
+}
+
+
+/*///////////////////////////////////////////*/
+/*///////////////////////////////////////////*/
+/*///////////////xFOOTER/////////////////////*/
+
+
 #footer {
 	position: relative;
 	bottom:0px;
@@ -286,6 +335,11 @@ p .emphasized {
 	color: #EBF8FF;
 }
 
+.smallFooterLink a.active {
+	background-color: #EBF8FF;
+	color: #3E517A;
+}
+
 #footer a:hover, #footer a:active {
 	background-color: #EBF8FF;
 	color: #3E517A;
@@ -294,6 +348,12 @@ p .emphasized {
 
 #footer p {
 	margin: 0px;
+}
+
+.footerLink {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .footerLink>div {
@@ -338,6 +398,8 @@ p .emphasized {
 	vertical-align: middle;
 }
 
+
+
 #copyTag {
 	font-size: 0.5em;
 	color: #EBF8FF;
@@ -345,15 +407,6 @@ p .emphasized {
 	padding-bottom: 20px;
 }
 
-#googleMap {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 600px;
-}
-
-#googleMap>iframe {
-	border: 1px solid #1F2533;
-}
 
 #overlay {
   position: fixed;
@@ -377,7 +430,7 @@ p .emphasized {
 
 
 
-/*///////////ADJUST SCREEN FOR MOBILE DEVICES///////////////*/
+/*///////////xADJUST SCREEN FOR MOBILE DEVICES///////////////*/
 /*//////////////////////////////////////////////////////////*/
 
 @media (max-width: 575px) {
@@ -425,8 +478,8 @@ p .emphasized {
 	}
 
 	#estDate>h4 {
-		top: 30px;
-		left: 140px;
+		top: 20px;
+		left: 50px;
 		font-size: 3vw;
 	}
 
@@ -469,7 +522,18 @@ p .emphasized {
 	#contentOne>p {
 	}
 
+	.inputTitle {
+		display: block;
+	}
 
+	#subjectInput {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	#messageInput {
+		max-width: 100%;
+	}
 }
 
 @media (max-width: 393px) {
@@ -515,7 +579,7 @@ p .emphasized {
 
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
-/*//////////////SMALL DEVICES//////////////////////*/
+/*//////////////xSMALL DEVICES//////////////////////*/
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////*/
@@ -531,7 +595,7 @@ p .emphasized {
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
-/*////////////////////MEDIUM DEVICES///////////////////*/
+/*////////////////////xMEDIUM DEVICES///////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
@@ -546,6 +610,9 @@ p .emphasized {
 		width: auto;
 	}
 
+	.footerLink {
+		max-width: 100%;
+	}
 
 	.footerLink>div {
 		top: -150px;
@@ -555,12 +622,16 @@ p .emphasized {
 		padding-left: 60px;
 	}
 
+	#neaImg, #ctaImg {
+		max-width: 300px;
+	}
+
 }
 
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
-/*/////////////////////LARGE SCREENS///////////////////*/
+/*/////////////////////xLARGE SCREENS///////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
@@ -639,6 +710,22 @@ p .emphasized {
 
 	#phoneLink {
 		display: none;
+	}
+
+
+	#contactBox>h2 {
+		margin-bottom: 20px;
+		text-align: right;
+
+	}
+
+	.line {
+		display: none;
+	}
+
+
+	#subjectInput {
+		width: 50%;
 	}
 
 	.footerLink>div {

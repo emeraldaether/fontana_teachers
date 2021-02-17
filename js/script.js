@@ -67,6 +67,7 @@ function buildPage (snippetHtml, pageTitle, pageId) {
 	closeNav();
 	document.title = pageTitle;
 	$(".nav-link").removeClass('active');
+	$(".smallFooterLink>a").removeClass('active');
 	$(pageId).addClass('active');
 $.get(snippetHtml, function( data ) {
   $( "#mainContent" ).html( data );
