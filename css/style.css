@@ -243,13 +243,14 @@ body {
 
 }
 
-#contentOne {
+.content {
 	border: 2px solid #1F2533;
 	box-shadow: 2px 2px 1px #1F2533;
 	background-color: #EBF8FF;
+	margin: 0px auto 20px auto;
 }
 
-#contentOne p {
+.content p {
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 10px;
@@ -277,27 +278,20 @@ p .emphasized {
 		text-align: right;
 		margin-right: auto;
 		margin-left: auto;
+		height: 100%;
 }
 
-	#contactBox>div>div {
-		margin-bottom: 10px;
-	}
-
-	.inputTitle {
-		margin-right: 20px;
-	}
-
-	#subjectInput {
-		width: 50%;
-		min-width: 200px;
-	}
-
-
-
-#messageInput {
+form {
 	height: 300px;
-	width: 100%;
-	max-width: 450px;
+}
+
+form>input:nth-child(3) {
+	height: 200px;
+}
+
+.execInfo {
+	font-variant: small-caps;
+	font-size: 1.25em;
 }
 
 
@@ -335,7 +329,7 @@ p .emphasized {
 	color: #EBF8FF;
 }
 
-.smallFooterLink a.active {
+#footer .smallFooterLink a.active {
 	background-color: #EBF8FF;
 	color: #3E517A;
 }
@@ -519,9 +513,6 @@ p .emphasized {
 		font-size: 1.25em;
 	}
 
-	#contentOne>p {
-	}
-
 	.inputTitle {
 		display: block;
 	}
@@ -562,7 +553,7 @@ p .emphasized {
 		margin-left: 10px;
 	}
 
-	#contentOne>p {
+	.content>p {
 		line-height: 25px;
 	}
 	
@@ -723,6 +714,10 @@ p .emphasized {
 		display: none;
 	}
 
+	.contentBox {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
 
 	#subjectInput {
 		width: 50%;

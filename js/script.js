@@ -3,7 +3,31 @@ var navToggler = document.getElementById("togglerButton")
 var pageTitle = "Home"
 var overlay = document.getElementById("overlay")
 var screenHeight = window.innerHeight
-var boardUrl = "board.json"
+
+
+
+var buildBoardPage = function () {
+	var html = "<div class='row'>" + "<div class='col-xs-12 col-sm-12 heading'>";
+		html += "<h1 class='text-center'>" + "Executive Board" + "</h1>";
+		html += "</div>"
+	var page = document.getElementById("mainContent");
+	for (i=0; i < board.length; i++) {
+		html += "<div class = 'col-xs-12 col-sm-6 contentBox'>" + "<div class='content text-center'>"
+		html += "<span class='execInfo'>" + "<h2>" + board[i].name + "</h2>";
+		html += board[i].occupation + "<br />";
+			if (board[i].fta_leadership) {
+				html += "FTA Leadership" + "<br />";
+
+			}
+		
+		html += "</span>" + "</div>" + "</div>";
+	}
+	html += "</div>" ;
+	$(page).html(html);
+	$(".nav-link").removeClass("active");
+	$("#execBoardLink").addClass("active");
+
+}
 
 window.addEventListener("resize", function (){
 	if (document.documentElement.clientWidth > 992){
@@ -27,15 +51,6 @@ var sendGetRequest =  function(requestUrl, responseHandler, isJsonResponse) {
                        isJsonResponse); 
       };
     request.open("GET", requestUrl, true);}
-
-var buildBoardPage = function (board) {
-	sendGetRequest(boardUrl, function (html) {
-		for (i=0; i < board.length; i++) {
-			html += "<h1>" + board(i).name + "</h1>";
-		}
-		document.getElementById('mainContent').innerHtml = html;
-	})
-}
 
 document.title = pageTitle
 
@@ -77,3 +92,15 @@ overlay.addEventListener("click", closeNav);
 
 var navHeading = document.getElementById("fta-full");
 
+var board = [{name:"Connie Verhulst", occupation:"president", fta_leadership: true},
+{name:"Robert Basset", occupation:"vice president", fta_leadership: true},
+{name:"Robb Lash", occupation:"secretary", "fta_leadership": true},
+{name:"Troy Liggins", occupation:"treasurer", "fta_leadership": true},
+{name:"Deborah Garland", occupation:"elementary director", "fta_leadership": false},
+{name:"Margie Brynda", occupation:"elementary director", "fta_leadership": false},
+{name:"Collen Gerke", occupation:"elementary director", "fta_leadership": false},
+{name:"Barbi Maddox", occupation:"elementary director", "fta_leadership": false},
+{name:"Amy Aydin", occupation:"middle school director", "fta_leadership": false},
+{name:"Jodi Dominguez", occupation:"middle school director", "fta_leadership": false},
+{name:"Glennon Poirier", occupation:"high school director", "fta_leadership": false},
+{name:"Mark Schulte", occupation:"high school director","fta_leadership": false}]
