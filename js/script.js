@@ -26,6 +26,7 @@ var buildBoardPage = function () {
 	$(page).html(html);
 	$(".nav-link").removeClass("active");
 	$("#execBoardLink").addClass("active");
+	closeNav();
 
 }
 
