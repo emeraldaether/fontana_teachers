@@ -28,7 +28,7 @@
 			
 				<header>
 				<nav id="header-nav" class="navbar navbar-expand-lg navbar-light">
-					<div class="container-fluid">
+					<div class="no-margin container-fluid">
 						
 
 
@@ -81,22 +81,22 @@
 						 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 						 	<ul id="nav-list">
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a href="#" class="nav-link" id="homeLink" onclick="buildPage('snippets/home-snippet.html', 'Home', '#homeLink')">
+								<a href="#" class="nav-link" id="homeLink" onclick="buildNewPage(0)">
 											Home</a></li>
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a class="nav-link" href="#"  id="aboutUsLink" onclick="buildPage('snippets/about-snippet.html', 'About Us', '#aboutUsLink')">
+								<a class="nav-link" href="#mainContent"  id="aboutUsLink" onclick="buildNewPage(1)">
 											About</a></li>
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="#mainContent">
 											Contact</a></li>
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a class="nav-link" href="#" id="execBoardLink" onclick="buildBoardPage()" >
+								<a class="nav-link" href="#mainContent" id="execBoardLink" onclick="buildBoardPage()" >
 											Executive Board</a></li>
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a class="nav-link" href="#" id="calendarLink" onclick="buildPage('snippets/calendar-snippet.html', 'Calendars', '#calendarLink')">
+								<a class="nav-link" href="#mainContent" id="calendarLink" onclick="buildNewPage(2)">
 											Calendars</a></li>
 							<li class="nav-item col-xs-12 col-sm-12 col-lg-4">
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="#mainContent">
 											Professional Development</a></li>											
 									</ul>
 								</div>
@@ -134,18 +134,18 @@
 					</div>
 
 					<div class="row">
-						<div class="col-xs-12 col-sm-4 smallFooterLink text-center">
-							<a href="#" onclick="buildPage('snippets/faq-snippet.html', 'F.A.Q.s', '#faqLink')" id="faqLink">
+						<div class="col-xs-12 col-sm-4 smallFooterLink text-center link-padding-md link-padding-lg link-padding-sm link-padding-xs">
+							<a href="#" onclick="buildNewPage(3)" class="nav-link" id="faqLink">
 								F.A.Q.s
 							</a>
 						</div>
-						<div class="col-xs-12 col-sm-4 smallFooterLink text-center">
-							<a href="#" onclick="buildPage('snippets/fontanan-archives.html', 'Fontanan Archives', '#fontananLink')">
+						<div class="col-xs-12 col-sm-4 smallFooterLink nav-link text-center link-padding-md link-padding-lg link-padding-sm link-padding-xs">
+							<a href="#" onclick="" class="nav-link">
 								Fontanan Archives
 							</a>
 						</div>
-						<div class="col-xs-12 col-sm-4 smallFooterLink text-center">
-							<a href="#" onclick="buildPage('snippets/evaluations.html', 'Employee Evaluations', '#evaluationLink')">
+						<div class="col-xs-12 col-sm-4 smallFooterLink nav-link text-center link-padding-md link-padding-lg link-padding-sm link-padding-xs">
+							<a href="#" onclick="" class="nav-link">
 								Evaluations
 
 							</a>
