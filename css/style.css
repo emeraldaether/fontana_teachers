@@ -238,9 +238,9 @@ body {
 }
 
 #mainContent .heading>h1>a:hover, #mainContent .heading>h1>a:active {
-	background-color: #EBF8FF;
 	box-shadow: 2px 2px 1px #1F2533;
-
+	background-color: #3E517A;
+	color: #EBF8FF;
 }
 
 .content {
@@ -294,6 +294,46 @@ form>input:nth-child(3) {
 	font-size: 1.25em;
 }
 
+.calendar-navbar {
+	margin-bottom: 50px;
+}
+
+.calendar-nav {
+	float: left;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.calendar-nav>a {
+	color: #3E517A;
+	text-decoration: none;
+	font-size: 1.25em;
+	padding: 10px;
+}
+
+.calendar-nav.active {
+	background-color: #3E517A;
+	color: #EBF8FF;
+}
+
+#calendar-box .externalLink {
+	margin-bottom: 20px;
+}
+
+#calendar-box>div {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#calendar-box .heading {
+	color: #1F2533;
+}
+
+#calendar-box iframe {
+	width: 100%;
+}
+
+
 
 /*///////////////////////////////////////////*/
 /*///////////////////////////////////////////*/
@@ -344,21 +384,27 @@ form>input:nth-child(3) {
 	margin: 0px;
 }
 
+#footer div {
+	padding: 0px;
+}
+
 .footerLink {
-	max-width: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.footerLink>div {
+.footerLink>div>div {
 	position: relative;
 	top: -250px;
 	height: 70px;
-	width: 100%;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 300px;
 
 }
 
-.footerLink>div>a>div {
+.footerLink a>div {
 	height: 100%;
 	width: 100%;
 	float: left;
@@ -525,6 +571,10 @@ form>input:nth-child(3) {
 	#messageInput {
 		max-width: 100%;
 	}
+
+	.footerLink>div>div {
+		padding: 0px;		
+	}
 }
 
 @media (max-width: 393px) {
@@ -565,6 +615,10 @@ form>input:nth-child(3) {
 		padding: 10px;
 	}
 
+	.footerLink>div>div {
+				width: 91.666667%;
+		min-width: 0px;
+	}
 
 }
 
@@ -708,10 +762,6 @@ form>input:nth-child(3) {
 		margin-bottom: 20px;
 		text-align: right;
 
-	}
-
-	.line {
-		display: none;
 	}
 
 	.contentBox {
