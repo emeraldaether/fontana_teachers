@@ -301,7 +301,8 @@ form>input:nth-child(3) {
 .calendar-nav {
 	float: left;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
+	padding: 0px 20px;
 }
 
 .calendar-nav>a {
@@ -311,9 +312,9 @@ form>input:nth-child(3) {
 	padding: 10px;
 }
 
-.calendar-nav.active {
-	background-color: #3E517A;
+.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
 	color: #EBF8FF;
+	background-color: #3E517A;
 }
 
 #calendar-box .externalLink {
@@ -772,6 +773,11 @@ form>input:nth-child(3) {
 	#subjectInput {
 		width: 50%;
 	}
+
+.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
+	color: #EBF8FF;
+	background-color: #3E517A;
+}
 
 	.footerLink>div {
 		padding-right: 110px;

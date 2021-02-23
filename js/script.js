@@ -27,8 +27,7 @@ var board = [{name:"Connie Verhulst", occupation:"president", fta_leadership: tr
 
 var buildBoardPage = function () {
 	var html = "<div class='row'>" + "<div class='col-xs-12 col-sm-12 heading'>";
-		html += "<h1 class='text-center'>" + "Executive Board" + "</h1>";
-		html += "</div>"
+		html += "<h1 class='text-center'>" + "Executive Board" + "</h1></div>"
 	var page = document.getElementById("mainContent");
 	for (i=0; i < board.length; i++) {
 		html += "<div class = 'col-xs-12 col-sm-6 contentBox'>" + "<div class='content text-center'>"
@@ -96,4 +95,7 @@ function buildCalendar(heading, array) {
 		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
 		html += "frameborder = '0 '" + "width='100%' height='650px'" + "</iframe></div>";
 	$(calendar).html(html);
+	$('.calendar-nav').removeClass('active');
+	var activeLink = '.calendar-nav' + ':nth-child(' + (array + 1) + ")";
+	$(activeLink).addClass('active')
 }
