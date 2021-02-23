@@ -1,8 +1,8 @@
-var navBar = document.getElementById("collapsableNav")
-var navToggler = document.getElementById("togglerButton")
-var pageTitle = "Home"
-var overlay = document.getElementById("overlay")
-var screenHeight = window.innerHeight
+var navBar = document.getElementById("collapsableNav");
+var navToggler = document.getElementById("togglerButton");
+var pageTitle = "Home";
+var overlay = document.getElementById("overlay");
+var screenHeight = window.innerHeight;
 
 var calendarUrl = [
 				"https://nebula.wsimg.com/518cd4c2d9ee267321dcc5dfb1792e4c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", 
@@ -71,12 +71,20 @@ document.title = pageTitle
 	$("#homeLink").addClass("active");
 
 window.addEventListener("resize", function (){
-	if (document.documentElement.clientWidth > 992){
+	if (window.innerWidth > 992){
 		overlay.style.display = "none"
 		navBar.style.width = "0px"
 	}
 })
 overlay.addEventListener("click", closeNav);
+window.addEventListener("resize", function (){
+	if (window.innerWidth < 992) {
+		var calendar = document.getElementById("calendar-box");
+			$(calendar).html(" ");
+		$('.calendar-nav').removeClass('active')
+
+	}
+})
 
 function buildPage (snippetHtml, pageTitle, pageId) {
 	closeNav();
@@ -89,7 +97,8 @@ $.get(snippetHtml, function( data ) {
 });}
 
 function buildCalendar(heading, array) {
-	var calendar = document.getElementById('calendar-box');
+	var calendar = document.getElementById("calendar-box");
+	console.log (calendar)
 	var html =  "<div class='col-xs-12 col-sm-10'>" + "<h1 class='text-center heading'>" + heading + "</h1>";
 		html += "<div class='text-center externalLink'>" + "<a href=" + calendarUrl[array] + " target='_blank'>";
 		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
