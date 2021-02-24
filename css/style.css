@@ -28,6 +28,20 @@ a {
 	margin: 50px auto;
 }
 
+.line-sm {
+	height: 1px;
+	width: 75%;
+	border-top: 2px solid #3E517A;
+	margin: 25px auto;
+}
+
+.line-lg {
+	height: 1px;
+	width: 75%;
+	border-top: 2px solid #3E517A;
+	margin: 75px auto;
+}
+
 .auto-margin {
 	margin-right: auto;
 	margin-left: auto;
@@ -57,6 +71,15 @@ a {
 
 .no-padding {
 	padding: 0px!important;
+}
+
+.no-side-padding {
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+}
+
+.no-border {
+	border: 0px!important;
 }
 
 a.infoBox.no-bg:hover {
@@ -140,7 +163,7 @@ a.infoBox.no-bg:hover {
 	right: 10px;
 	bottom: -160px;
 	padding: 10px;
-	background: #C9DBE3
+	background: #C9DBE3;
 }
 
 /*////////NAVIGATION///////////*/
@@ -251,10 +274,10 @@ a.infoBox.no-bg:hover {
 
 
 .infoBox {
-	border: 2px solid #1F2533;
+	border: 1px solid #BDD7E5;
 	background: #EBF8FF;
 	text-shadow: 1px 1px 1px #1F2533;
-	padding: 10px 50px 10px 50px;
+	padding: 20px 50px 20px 50px;
 	margin-bottom: 30px;
 }
 
@@ -280,6 +303,12 @@ a.infoBox.no-bg:hover {
 	box-shadow: 2px 2px 1px #1F2533;
 	background-color: #3E517A;
 	color: #EBF8FF;
+	border-color: #1F2533;
+}
+
+#largeContent {
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .content {
@@ -305,10 +334,6 @@ p .emphasized {
 
 #googleMap {
 	max-width: 500px;
-}
-
-#googleMap>iframe {
-	border: 2px solid #1F2533;
 }
 
 .execInfo {
@@ -631,7 +656,7 @@ p .emphasized {
 		font-size: 1em;
 	}
 
-	#mainContent .heading>a {
+	#mainContent .heading>a, .heading {
 		padding: 10px;
 	}
 	
@@ -785,11 +810,6 @@ p .emphasized {
 		margin-top: 150px;
 	}
 
-	#googleMap {
-		width: 600px;
-	}
-	
-
 	#phoneLink {
 		display: none;
 	}
@@ -806,14 +826,18 @@ p .emphasized {
 		padding-right: 50px;
 	}
 
-	#subjectInput {
-		width: 50%;
+	#googleMap {
+		width: 600px;
+	}
+	
+	form {
+		margin-top: 140px;
 	}
 
-.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
-	color: #EBF8FF;
-	background-color: #3E517A;
-}
+	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
+		color: #EBF8FF;
+		background-color: #3E517A;
+	}
 
 	.footerLink>div {
 		padding-right: 110px;
