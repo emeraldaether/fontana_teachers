@@ -56,7 +56,21 @@ a {
 	font-weight: bold;
 	color: #3E517A;
 	text-shadow: 1px 0px 1px #1F2533;
+	margin-bottom: 40px;
 }
+
+.heading>a {
+	color: #3E517A;
+	vertical-align: middle;
+}
+
+.heading>a:hover, .heading>a:active {
+	box-shadow: 2px 2px 1px #1F2533;
+	background-color: #3E517A;
+	color: #EBF8FF;
+	border-color: #1F2533;
+}
+
 
 .heading-no-shadow {
 	font-family: 'Noto Serif JP', serif;
@@ -94,14 +108,38 @@ a.infoBox.no-bg:hover {
 .no-text-shadow {
 	text-shadow: none!important;
 }
-/*NAVIGATION BAR*/
+
+.standard-spacing {
+	margin-top: 30px!important;
+	margin-bottom:30px!important;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/*///////////////////////////////////////////////////*/
+/*//////////////NAVIGATION BAR///////////////////////*/
+/*///////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////*/
 
 
 #header-nav {
 	width: 100%;
 	position: relative;
 	background-color: #EBF8FF;
-	border: 2px #1F2533 solid;
+	border-bottom: 2px #1F2533 solid;
 	padding: 0px;
 	height: 150px;
 	color: #1F2533;	
@@ -112,10 +150,6 @@ a.infoBox.no-bg:hover {
 	margin: 0px;
 	height: 150px;
 }
-
-/*////////////LOGO//////////////////*/
-/*////////////////////////////////////*/
-
 
 .navbar-brand {
 	height: 100px;
@@ -130,21 +164,25 @@ a.infoBox.no-bg:hover {
 	top: -50px;
 }
 
-#navbar-brand>div {
-	width: auto;
-}
-
-.navbar-brand>div>h1 {
+#fta-full {
 	position: absolute;
 	font-family: Rubik, san-serif;
 	width: auto;
 	text-shadow: 2px 1px 1px #1F2533;
 	margin: 0px;
-	top: 40px;
+	top: 45px;
 	left: 125px;
 	font-weight: bold;
 	font-variant: small-caps;
 	color: #3E517A;
+}
+
+#estDate>h4 {
+    position: absolute;
+    top: 120px;
+    left: 125px;
+    font-size: 2vw;
+    color: #1F2533;
 }
 
 #logo {
@@ -166,32 +204,18 @@ a.infoBox.no-bg:hover {
 	background: #C9DBE3;
 }
 
-/*////////NAVIGATION///////////*/
-/*///////////////////////////////*/
-
 .contact-info {
 	position: absolute;
 	top: -10px;
 	right: 20px;
 	font-size: 0.75em;
 	font-weight: bold;
-	width: auto;
-	display: none;
-	color: #1F2533;
 	font-family: 'Noto Serif JP', serif;
 }
 
 .contact-info>p {
 	margin: 0px;
 	text-align: right;
-}
-
-#estDate>h4 {
-    position: absolute;
-    top: 120px;
-    left: 125px;
-    font-size: 2vw;
-    color: #1F2533;
 }
 
 /*/////////////////////////////////////////////////*/
@@ -290,22 +314,6 @@ a.infoBox.no-bg:hover {
 	margin-top: 80px;
 }
 
-#mainContent .heading {
-	margin-bottom: 50px;
-}
-
-#mainContent .heading>a {
-	color: #3E517A;
-	vertical-align: middle;
-}
-
-#mainContent .heading>a:hover, #mainContent .heading>a:active {
-	box-shadow: 2px 2px 1px #1F2533;
-	background-color: #3E517A;
-	color: #EBF8FF;
-	border-color: #1F2533;
-}
-
 #largeContent {
 	margin-right: 10px;
 	margin-left: 10px;
@@ -332,14 +340,24 @@ p .emphasized {
 	text-align: center;
 }
 
+/*///////////HOME PAGE/////////////*/
+/*/////////////////////////////////*/
+
+
 #googleMap {
 	max-width: 500px;
 }
+
+/*/////////////EXECUTIVE BOARD PAGE///////////////////*/
+/*////////////////////////////////////////////////////*/
 
 .execInfo {
 	font-variant: small-caps;
 	font-size: 1.25em;
 }
+
+/*////////////////CALENDAR PAGE///////////////////////*/
+/*////////////////////////////////////////////////////*/
 
 .calendar-navbar {
 	margin-bottom: 50px;
@@ -374,6 +392,9 @@ p .emphasized {
 #calendar-box iframe {
 	width: 100%;
 }
+
+
+/*/////////////////////OTHER PAGES////////////////////*/
 
 #vaccineVideo {
 	max-width: 560px;
@@ -487,21 +508,6 @@ p .emphasized {
 	padding-bottom: 20px;
 }
 
-
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1;
-  cursor: pointer;
-  transition: 0.5s;
-}
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
 /*///////////////////////////////////////*/
@@ -515,6 +521,11 @@ p .emphasized {
 
 @media (max-width: 575px) {
 	
+	.no-side-padding-xs {
+		padding-left: 5px!important;
+		padding-right: 5px!important;
+	}
+
 	.heading, .infoBox {
 		text-shadow: none;
 	}
@@ -656,7 +667,7 @@ p .emphasized {
 		font-size: 1em;
 	}
 
-	#mainContent .heading>a, .heading {
+	.heading>a, .heading {
 		padding: 10px;
 	}
 	
@@ -764,13 +775,12 @@ p .emphasized {
 	}
 
 	#fta-full {
-		top: -77px;
+		top: -80px;
 	}
 	
 	.contact-info {
 		font-size: 1em;
 		right: 25px;
-		display: inline-block;
 		top: 10px;
 	}
 
@@ -784,8 +794,7 @@ p .emphasized {
 		left: 0px;
 		padding: 0px 10px 5px 10px;
 		width: 100%;
-		border: 2px solid #1F2533;
-		border-top: 0px;
+		border-bottom: 2px solid #1F2533;
 		flex-direction: row;
 		background-color: #EBF8FF;
 		list-style: none;
