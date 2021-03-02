@@ -12,6 +12,7 @@ body {
 	padding: 0px;
 	margin: 0px;
 	background: #D7DCEA;
+	background-attachment: scroll;
 	color: #1F2533;
 	width: auto;
 }
@@ -299,7 +300,7 @@ a.infoBox.no-bg:hover {
 
 .infoBox {
 	border: 1px solid #BDD7E5;
-	background: #E2EFF8;
+	background: rgba(236, 239, 248, 0.8);
 	text-shadow: 1px 1px 1px #1F2533;
 	padding: 20px 50px 20px 50px;
 	margin-bottom: 30px;
@@ -363,29 +364,29 @@ p .emphasized {
 	margin-bottom: 50px;
 }
 
-.calendar-nav {
+.calendar-nav, .faq-nav{
 	float: left;
 	text-align: center;
 	margin-bottom: 25px;
 	padding: 0px 20px;
 }
 
-.calendar-nav>a {
+.calendar-nav>a, .faq-nav>a{
 	color: #3E517A;
 	font-size: 1.25em;
 	padding: 10px;
 }
 
-.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
+.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active, .faq-nav.active>a, .faq-nav>a:hover, .faq-nav>a:active{
 	color: #EBF8FF;
 	background-color: #3E517A;
 }
 
-#calendar-box .externalLink {
+#calendar-box .externalLink, #answer-box .externalLink {
 	margin-bottom: 20px;
 }
 
-#calendar-box .heading {
+#calendar-box .heading, #answer-box .heading {
 	color: #1F2533;
 }
 
@@ -846,6 +847,12 @@ p .emphasized {
 	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
 		color: #EBF8FF;
 		background-color: #3E517A;
+	}
+
+	.faq-navbar, .calendar-navbar {
+		padding: 30px 10px;
+		background-color: #EBF8FF;
+		margin-bottom: 30px;
 	}
 
 	.footerLink>div {

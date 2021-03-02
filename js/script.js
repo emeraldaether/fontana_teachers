@@ -12,6 +12,26 @@ var calendarUrl = [
 				"https://nebula.wsimg.com/b61f0e9acbf9d0bfe9eef9ead4854431?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"
 				]
 
+var answerInfo = [
+					'http://nebula.wsimg.com/63cc26c968abe9135b977f2f41faa845?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1', 
+					'http://nebula.wsimg.com/c386cf0a2282a78f269108e8fe78fa90?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					null,
+					'http://nebula.wsimg.com/42de1c962e5c94209c040119d6406887?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					null,
+					null,
+					null
+					 ]
+
+var overageLink = [
+					{url: 'http://nebula.wsimg.com/8d1ae8b9171cdcebfccfad4a4c903cc9?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					name: 'Excess Student Instructions and Worksheet, Middle - High School'},
+					{url: 'http://nebula.wsimg.com/5a8e5c179bdf256ac570cefeadf74b63?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					name: 'Excess Student Instructions and Worksheet, Elementary'},
+					{url: 'http://nebula.wsimg.com/e417811b42b83f3add8d26f2c22170d5?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					name: 'Excess Student Timesheet'}
+					]
+					
+
 var board = [
 			 {name:"Connie Verhulst", occupation:"president", fta_leadership: true},
 			 {name:"Robert Basset", occupation:"vice president", fta_leadership: true},
@@ -65,9 +85,12 @@ window.addEventListener("resize", function (){
 overlay.addEventListener("click", closeNav);
 window.addEventListener("resize", function (){
 	if (window.innerWidth < 992) {
+		var faq = document.getElementById("answer-box")
 		var calendar = document.getElementById("calendar-box");
 			$(calendar).html(" ");
+			$(faq).html(" ");
 		$('.calendar-nav').removeClass('active')
+		$('.faq-nav').removeClass('active')
 
 	}
 })
@@ -97,6 +120,37 @@ function buildCalendar(heading, array) {
 	$(calendar).html(html);
 	$('.calendar-nav').removeClass('active');
 	var activeLink = '.calendar-nav' + ':nth-child(' + (array + 1) + ")";
+	$(activeLink).addClass('active')
+}
+
+function buildAnswer(heading, array) {
+	var answer = document.getElementById("answer-box")
+	var html = "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow' id='answer-heading'>";
+		html += heading + "</h1>";
+		if (array != 2){
+			if (array != 6){				
+			html += "<div class='d-none d-lg-block'>" + "<div class='text-center externalLink'>" + "<a href=" + answerInfo[array] + " target='_blank'>";
+			html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + answerInfo[array];
+			html += "frameborder = '0' " + "width='100%' height='650px'" + "</iframe></div></div>";
+			$('#answer-heading').addClass('d-none');
+		} 
+		else {
+			html += "<div class='line-lg'></div>";
+			for (i=0; i<overageLink.length; i++) {
+				html += "<div class='col-lg-12 auto-margin text-center faq-nav'>" + "<a href=" + "'" + overageLink[i].url + "'";
+				html += " target=_blank>" + overageLink[i].name + "</a></div>"
+					}
+				html += "</div>"
+
+		}
+	} else {
+			html += "<div class='line-lg'></div>";
+			html += "<div class='col-lg-8 auto-margin text-center'>" + "<p>" + "Part Time Dues are $750" + "</p>";
+			html += "<p>" + "Full Time Dues are $1350" + "</p></div>";
+	}
+	$(answer).html(html);
+	$('.faq-nav').removeClass('active');
+	var activeLink = '.faq-nav' + ':nth-child(' + (array + 1) + ")";
 	$(activeLink).addClass('active')
 }
 
