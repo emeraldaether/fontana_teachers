@@ -140,7 +140,7 @@ a.infoBox.no-bg:hover {
 	width: 100%;
 	position: relative;
 	background-color: #EBF8FF;
-	border-bottom: 2px #1F2533 solid;
+	border-bottom: 2px #BDD7E5 solid;
 	padding: 0px;
 	height: 150px;
 	color: #1F2533;	
@@ -231,10 +231,11 @@ a.infoBox.no-bg:hover {
 
 }
 
-#collapsableNav li a:hover, #collapsable li a:active, #collapsableNav li a.active {
+#collapsableNav li a:hover, #collapsable li a:active, #collapsableNav li a.active, .dropdown-item:hover  {
 	background-color: #3E517A;
 	color: #EBF8FF;
 }
+
 
 /*/////////////////////////////////////////////////*/
 /*////////////////SIDE NAV WITH OVERLAY////////////*/
@@ -321,7 +322,7 @@ a.infoBox.no-bg:hover {
 }
 
 .content {
-	border: 2px solid #1F2533;
+	border: 2px solid #BDD7E5;
 	box-shadow: 2px 2px 1px #1F2533;
 	background-color: #EBF8FF;
 	margin: 0px auto 20px auto;
@@ -401,6 +402,23 @@ p .emphasized {
 	max-width: 560px;
 }
 
+.faq-navbar, .calendar-navbar  {
+	padding: 30px 15px;
+	background: #EBF8FF;
+	border-width: 2px 0px 2px 0px;
+	border-color: #BDD7E5;
+	border-style: solid;
+}
+
+#archiveBox {
+	min-height: 300px;
+	margin: 0px;
+}
+
+#archive-menu {
+	height: 200px;
+	overflow: auto;
+}
 
 /*///////////////////////////////////////////*/
 /*///////////////////////////////////////////*/
@@ -412,7 +430,7 @@ p .emphasized {
 	bottom:0px;
 	width: 100%;
 	min-height: 200px;
-	border-top: 2px solid #1F2533;
+	border-top: 2px solid #BDD7E5;
 	border-bottom: 2px solid #1F2533;
 	margin-top: 300px;
 	background-color: #3E517A;
@@ -795,7 +813,7 @@ p .emphasized {
 		left: 0px;
 		padding: 0px 10px 5px 10px;
 		width: 100%;
-		border-bottom: 2px solid #1F2533;
+		border-bottom: 2px solid #BDD7E5;
 		flex-direction: row;
 		background-color: #EBF8FF;
 		list-style: none;
@@ -844,14 +862,13 @@ p .emphasized {
 		margin-top: 140px;
 	}
 
-	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active {
+	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active, {
 		color: #EBF8FF;
 		background-color: #3E517A;
 	}
 
 	.faq-navbar, .calendar-navbar {
 		padding: 30px 10px;
-		background-color: #EBF8FF;
 		margin-bottom: 30px;
 	}
 

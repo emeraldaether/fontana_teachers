@@ -1,10 +1,6 @@
-EBF8FF
-7FD7E3
-A1E9F7 (161, 233, 247, 0.95)
-70CAD1
-578EA6
 
-EBF8FF
-3E517A
-D7DCEA
-1F2533 - font color
+1F2533 - font color, dark colors
+3E517A - dark blue contrast
+EBF8FF - off-white with hint of blue
+D7DCEA - background color
+BDD7E5 - border color

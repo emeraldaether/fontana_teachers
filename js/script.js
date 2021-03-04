@@ -1,9 +1,9 @@
 var navBar = document.getElementById("collapsableNav");
-var navToggler = document.getElementById("togglerButton");
 var pageTitle = "Home";
 document.title = pageTitle
 var overlay = document.getElementById("overlay");
 var screenHeight = window.innerHeight;
+var archiveButton = document.getElementById("archive-menu");
 var calendarUrl = [
 				"https://nebula.wsimg.com/518cd4c2d9ee267321dcc5dfb1792e4c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", 
 				"https://nebula.wsimg.com/a02a54c6c369bc19837afb7b379b4000?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1",
@@ -47,17 +47,18 @@ var board = [
 			 {name:"Mark Schulte", occupation:"high school director", fta_leadership: false}]
 
 var snippet = [
-			 {url:"snippets/home-snippet.html", id:"#homeLink", title:"Home"},
-			 {url:"snippets/about-snippet.html", id:"#aboutUsLink", title:"About Us"},
-			 {url:"snippets/calendar-snippet.html", id:"#calendarLink", title:"Calendars"},
-			 {url:"snippets/faq-snippet.html", id:"#faqLink", title:"F.A.Q.'s"},
-			 {url:"snippets/covid-snippet.html", id:null, title:"Covid-19 Resources"}
+			 {id: 90, url:"snippets/home-snippet.html", pageId:"#homeLink", title:"Home"},
+			 {id: 91, url:"snippets/about-snippet.html", pageId:"#aboutUsLink", title:"About Us"},
+			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
+			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
+			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
+			 {id: 95, url:"snippets/fontanan-snippet.html", pageId:"#fontanan", title:"Fontanan Archives"}
 ]
 
 $.get(snippet[0].url, function(data) {
 	 $("#mainContent").html(data); 
 	});
-	$(snippet[0].id).addClass("active");
+	$(snippet[0].pageId).addClass("active");
 
 function openNav () {
 var screenWidth = window.innerWidth;
@@ -94,6 +95,7 @@ window.addEventListener("resize", function (){
 
 	}
 })
+
 /*/////////////////////////////////////////////////////////*/
 /*/////FUNCTIONS FOR DYNAMICALLY LOADING CONTENT///////////*/
 /*/////////////////////////////////////////////////////////*/
@@ -101,11 +103,11 @@ window.addEventListener("resize", function (){
 var buildNewPage = function(array) {
 	closeNav();
 	document.title = snippet[array].title;
-	var pageId = snippet[array].id;
+	var id = snippet[array].pageId;
 	var html = snippet[array].url;
 	$(".nav-link").removeClass('active');
 	$(".smallFooterLink>a").removeClass('active');
-$(pageId).addClass('active');
+$(id).addClass('active');
 $.get(html, function(data) {
   $("#mainContent").html(data);
 });}
@@ -175,3 +177,5 @@ var buildBoardPage = function () {
 		document.title = "Executive Board";
 
 }
+
+
