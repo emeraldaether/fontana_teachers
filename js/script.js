@@ -4,64 +4,56 @@ document.title = pageTitle
 var overlay = document.getElementById("overlay");
 var screenHeight = window.innerHeight;
 var archiveButton = document.getElementById("archive-menu");
-var calendarUrl = [
-				"https://nebula.wsimg.com/518cd4c2d9ee267321dcc5dfb1792e4c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", 
-				"https://nebula.wsimg.com/a02a54c6c369bc19837afb7b379b4000?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1",
-				"https://nebula.wsimg.com/3d7c983534c782a82991b2ff70ac8d86?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1",
-				"https://nebula.wsimg.com/930b0761fea79f6e4647875b5041d1d0?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1",
-				"https://nebula.wsimg.com/b61f0e9acbf9d0bfe9eef9ead4854431?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"
-				]
+var screenWidth = window.innerWidth;
 
-var answerInfo = [
-					'http://nebula.wsimg.com/63cc26c968abe9135b977f2f41faa845?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1', 
-					'http://nebula.wsimg.com/c386cf0a2282a78f269108e8fe78fa90?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					null,
-					'http://nebula.wsimg.com/42de1c962e5c94209c040119d6406887?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					null,
-					null,
-					null
-					 ]
+function buildContractDropdown(){
+	var html = "<button class='btn btn-primary dropdown-toggle d-none d-md-block auto-margin' data-toggle='dropdown'>";
+		html += "Contract Details" + "<span class='caret'></span>" + "<ul class='dropdown-menu' id='contract-menu'>"
+		html += "<li><a href='#' onclick='mobilePhoneContractPage()'>" + "View On New Page" + "</a></li>";
+	for (i=0; i<contractInfo.length; i++) {
+		html += "<li><a href=" + contractInfo[i].url + " class='dropdown-item contract-link' target='_blank'>"; 
+		if (i != 0){
+			if (i < 30) {
+		html += "article";
+		} 
+	else {
+		html += "appendix";
+	}
+		html += " " + contractInfo[i].id + " - "; 
+};
+		html += contractInfo[i].name + "</li></a>";
+	};
+	$('#contract-dropdown').html(html);
+}
 
-var overageLink = [
-					{url: 'http://nebula.wsimg.com/8d1ae8b9171cdcebfccfad4a4c903cc9?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					name: 'Excess Student Instructions and Worksheet, Middle - High School'},
-					{url: 'http://nebula.wsimg.com/5a8e5c179bdf256ac570cefeadf74b63?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					name: 'Excess Student Instructions and Worksheet, Elementary'},
-					{url: 'http://nebula.wsimg.com/e417811b42b83f3add8d26f2c22170d5?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					name: 'Excess Student Timesheet'}
-					]
-					
+function mobilePhoneContractPage() {
+		var html = "<div class='row'>" + "<h1 class='text-center heading'>" + "Contract" + "</h1>";
+			html += "<div class='infoBox no-padding' id='contract-box'>" + "<div class='col-xs-12 col-sm-12 text-center'>";
+			html += "<a href='" + contractInfo[0].url + "' class='contract-link' target='_blank'>";
+			html += contractInfo[0].name + "</a></div>";
+		for (i=1; i<contractInfo.length; i++) {
+			html += "<div class='col-xs-12 col-sm-12 text-center'><a href='" + contractInfo[i].url;
+			html += "' class='contract-link' target='_blank'>";
+			if (i<30){	
+			html += "Article ";}
+			else {
+			html += "Appendix ";	
+			}; 
+			html += contractInfo[i].id + " - " + contractInfo[i].name + "</a></div>";
+		};
+			html += "</div></div>";
+		$('#mainContent').html(html);
+}
 
-var board = [
-			 {name:"Connie Verhulst", occupation:"president", fta_leadership: true},
-			 {name:"Robert Basset", occupation:"vice president", fta_leadership: true},
-			 {name:"Robb Lash", occupation:"secretary", fta_leadership: true},
-			 {name:"Troy Liggins", occupation:"treasurer", fta_leadership: true},
-			 {name:"Deborah Garland", occupation:"elementary director", fta_leadership: false},
-			 {name:"Margie Brynda", occupation:"elementary director", fta_leadership: false},
-			 {name:"Collen Gerke", occupation:"elementary director", fta_leadership: false},
-			 {name:"Barbi Maddox", occupation:"elementary director", fta_leadership: false},
-			 {name:"Amy Aydin", occupation:"middle school director", fta_leadership: false},
-			 {name:"Jodi Dominguez", occupation:"middle school director", fta_leadership: false},
-			 {name:"Glennon Poirier", occupation:"high school director", fta_leadership: false},
-			 {name:"Mark Schulte", occupation:"high school director", fta_leadership: false}]
-
-var snippet = [
-			 {id: 90, url:"snippets/home-snippet.html", pageId:"#homeLink", title:"Home"},
-			 {id: 91, url:"snippets/about-snippet.html", pageId:"#aboutUsLink", title:"About Us"},
-			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
-			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
-			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
-			 {id: 95, url:"snippets/fontanan-snippet.html", pageId:"#fontanan", title:"Fontanan Archives"}
-]
 
 $.get(snippet[0].url, function(data) {
 	 $("#mainContent").html(data); 
+	 buildContractDropdown();
 	});
 	$(snippet[0].pageId).addClass("active");
 
 function openNav () {
-var screenWidth = window.innerWidth;
+
 overlay.style.display = "block";
 if (screenWidth > 566) 	{
 	navBar.style.width = "300px";
@@ -110,7 +102,11 @@ var buildNewPage = function(array) {
 $(id).addClass('active');
 $.get(html, function(data) {
   $("#mainContent").html(data);
-});}
+  if (array == 0) {
+	buildContractDropdown();
+};
+});
+}
 
 function buildCalendar(heading, array) {
 	var calendar = document.getElementById("calendar-box");

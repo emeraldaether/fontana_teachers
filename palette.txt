@@ -1,6 +1,6 @@
 
-1F2533 - font color, dark colors
-3E517A - dark blue contrast
-EBF8FF - off-white with hint of blue
-D7DCEA - background color
-BDD7E5 - border color
+#1F2533 - font color, dark colors
+#3E517A - dark blue contrast
+#EBF8FF - off-white with hint of blue
+#D7DCEA - background color
+#BDD7E5 - border color
