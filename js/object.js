@@ -98,5 +98,5 @@ var snippet = [
 			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
 			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
 			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
-			 {id: 95, url:"snippets/fontanan-snippet.html", pageId:"#fontanan", title:"Fontanan Archives"}
+			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll Information"}
 ]

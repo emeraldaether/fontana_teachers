@@ -26,6 +26,15 @@ function buildContractDropdown(){
 	$('#contract-dropdown').html(html);
 }
 
+
+
+
+$.get(snippet[0].url, function(data) {
+	 $("#mainContent").html(data); 
+	 buildContractDropdown();
+	});
+	$(snippet[0].pageId).addClass("active");
+
 function mobilePhoneContractPage() {
 		var html = "<div class='row'>" + "<h1 class='text-center heading'>" + "Contract" + "</h1>";
 			html += "<div class='infoBox no-padding' id='contract-box'>" + "<div class='col-xs-12 col-sm-12 text-center'>";
@@ -44,13 +53,6 @@ function mobilePhoneContractPage() {
 			html += "</div></div>";
 		$('#mainContent').html(html);
 }
-
-
-$.get(snippet[0].url, function(data) {
-	 $("#mainContent").html(data); 
-	 buildContractDropdown();
-	});
-	$(snippet[0].pageId).addClass("active");
 
 function openNav () {
 

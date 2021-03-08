@@ -14,7 +14,6 @@ body {
 	background: #D7DCEA;
 	background-attachment: scroll;
 	color: #1F2533;
-	width: auto;
 }
 
 a {
@@ -344,7 +343,9 @@ p .emphasized {
 
 /*///////////HOME PAGE/////////////*/
 /*/////////////////////////////////*/
-
+#phoneLink {
+	margin-bottom: 50px;
+}
 
 #googleMap {
 	max-width: 500px;
