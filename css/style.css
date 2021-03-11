@@ -11,7 +11,6 @@ body {
 	font-family: Rubik, Georgia, sans-serif;
 	padding: 0px;
 	margin: 0px;
-	background: #D7DCEA;
 	background-attachment: scroll;
 	color: #1F2533;
 }
@@ -19,6 +18,11 @@ body {
 a {
 	text-decoration: none;
 	color: #3E517A;
+}
+
+a:hover {
+	color: #EBF8FF;
+	text-shadow: 1px 1px 2px #3E517A;
 }
 
 .line {
@@ -71,6 +75,10 @@ a {
 	border-color: #1F2533;
 }
 
+.sub-heading { 
+	font-family: 'Noto Serif JP', serif;
+	color: #1F2533;
+ }
 
 .heading-no-shadow {
 	font-family: 'Noto Serif JP', serif;
@@ -114,6 +122,10 @@ a.infoBox.no-bg:hover {
 	margin-bottom:30px!important;
 }
 
+.bg-one{
+	background-color: #D7DCEA;
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -137,7 +149,6 @@ a.infoBox.no-bg:hover {
 
 #header-nav {
 	width: 100%;
-	position: relative;
 	background-color: #EBF8FF;
 	border-bottom: 2px #BDD7E5 solid;
 	padding: 0px;
@@ -248,10 +259,10 @@ a.infoBox.no-bg:hover {
 		height: 100%;
 		width: 0px;
 		position: fixed;
-		z-index: 2;
+		z-index: 1031;
 		top: 0;
 		right: 0;
-		background-color: rgba(235, 248, 255, 0.95);
+		background-color: #eceff8;
 		overflow-x: hidden;
 		transition: 0.5s;
 		padding-top: 60px;
@@ -307,7 +318,7 @@ a.infoBox.no-bg:hover {
 }
 
 #mainContent {
-	margin-top: 75px;
+	margin-top: 250px;
 	min-height: 50vh;
 }
 
@@ -320,27 +331,6 @@ a.infoBox.no-bg:hover {
 	margin-left: 10px;
 }
 
-.content {
-	border: 2px solid #BDD7E5;
-	box-shadow: 2px 2px 1px #1F2533;
-	background-color: #EBF8FF;
-	margin: 0px auto 20px auto;
-}
-
-.content p {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	line-height: 30px;
-
-}
-
-p .emphasized {
-	font-size: 1.5em;
-	font-variant: small-caps;
-	text-align: center;
-}
-
 /*///////////HOME PAGE/////////////*/
 /*/////////////////////////////////*/
 #phoneLink {
@@ -349,6 +339,21 @@ p .emphasized {
 
 #googleMap {
 	max-width: 500px;
+}
+
+.infoBox button {
+	z-index: 0;
+	background-color: #3E517A;
+	border-color: #1F2533;
+	color: #EBF8FF;
+	text-transform: capitalize;
+}
+
+.infoBox button:focus, .infoBox button:hover {
+	background-color: #D7DCEA;
+	color: #1F2533;
+	border-color: #BDD7E5;
+	box-shadow: 2px 2px 2px 2px #3E517A;
 }
 
 /*/////////////EXECUTIVE BOARD PAGE///////////////////*/
@@ -423,7 +428,7 @@ p .emphasized {
 	max-width: 300px;
 }
 
-.contract-link {
+.contract-link, .archive-link {
 	text-shadow: none;
 	text-transform: capitalize;
 }
@@ -561,6 +566,10 @@ p .emphasized {
 
 @media (max-width: 575px) {
 	
+	.no-padding-xs {
+		padding: 0px!important;
+	}
+
 	.no-side-padding-xs {
 		padding-left: 5px!important;
 		padding-right: 5px!important;
@@ -653,7 +662,7 @@ p .emphasized {
 	}
 
 	#mainContent {
-		width: auto;
+		margin-top: 100px;
 	}
 
 	.heading {
@@ -697,10 +706,6 @@ p .emphasized {
 
 	.col-xxs-12 {
 		width: 100%;
-	}
-
-	.content>p {
-		line-height: 25px;
 	}
 	
 	.heading {
@@ -828,8 +833,9 @@ p .emphasized {
     	top: 10px;
 	}
 	
+
 	#nav-list {
-		position: absolute;
+		position: fixed;
 		top: 150px;
 		left: 0px;
 		padding: 0px 10px 5px 10px;
@@ -838,6 +844,7 @@ p .emphasized {
 		flex-direction: row;
 		background-color: #EBF8FF;
 		list-style: none;
+		z-index: 1030;
 	}
 	
 	#nav-list>li {
@@ -855,9 +862,6 @@ p .emphasized {
 		display: inline;
 	}
 
-	#mainContent {
-		margin-top: 150px;
-	}
 
 	#phoneLink {
 		display: none;

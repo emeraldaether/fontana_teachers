@@ -1,49 +1,71 @@
 var navBar = document.getElementById("collapsableNav");
+
 var pageTitle = "Home";
-document.title = pageTitle
 var overlay = document.getElementById("overlay");
 var screenHeight = window.innerHeight;
 var archiveButton = document.getElementById("archive-menu");
 var screenWidth = window.innerWidth;
+var homePage = window.location.href;
 
-function buildContractDropdown(){
-	var html = "<button class='btn btn-primary dropdown-toggle d-none d-md-block auto-margin' data-toggle='dropdown'>";
-		html += "Contract Details" + "<span class='caret'></span>" + "<ul class='dropdown-menu' id='contract-menu'>"
-		html += "<li><a href='#' onclick='mobilePhoneContractPage()'>" + "View On New Page" + "</a></li>";
-	for (i=0; i<contractInfo.length; i++) {
-		html += "<li><a href=" + contractInfo[i].url + " class='dropdown-item contract-link' target='_blank'>"; 
-		if (i != 0){
-			if (i < 30) {
-		html += "article";
-		} 
-	else {
-		html += "appendix";
-	}
-		html += " " + contractInfo[i].id + " - "; 
-};
-		html += contractInfo[i].name + "</li></a>";
-	};
-	$('#contract-dropdown').html(html);
+
+document.title = pageTitle
+
+
+
+function buildDropdown (subject) {
+	var year = 2021;
+	var html = "<button class='btn dropdown-toggle auto-margin' data-toggle='dropdown'>";
+		html += subject[0].displayName + "<span class='caret'></span></button>" + "<ul class='dropdown-menu' id='" + subject[0].id + "'>";
+	if (subject[0].name == "contract") {
+		html += "<li><a href='#' onclick='contractPage()'>" + "View On New Page" + "</a></li>";
+	} else if (subject[0].name == "archive") {
+		html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
+		year--;
+		};
+	for (i=1; i<subject.length; i++) {
+		html += "<li><a href=" + subject[i].url + " class='dropdown-item " + subject[0].name + "-link' target='_blank'>";
+		if (subject[0].name == "contract") {
+			if (i != 1){
+				if (i < 31) {
+					html += "article";
+				} else {
+					html += "appendix";
+				};
+					html += " " + subject[i].id + " - ";
+			};
+			html += subject[i].name + "</a></li>";
+			} else if (subject[0].name == "archive") {
+					html += subject[i].month + " " + subject[i].year;
+					html += "</a></li>";
+					if (subject[i].transition == true){
+						html += "<li class='dropdown-header'>" + (year - 1) + " - " + year;
+						year--;
+						html += "</li>"
+					 };
+				}
+			
+		}
+		$(subject[0].target).html(html);
+	
 }
-
-
-
 
 $.get(snippet[0].url, function(data) {
 	 $("#mainContent").html(data); 
-	 buildContractDropdown();
+	 buildDropdown(contractInfo);
+	 buildDropdown(fontananArchives);
 	});
 	$(snippet[0].pageId).addClass("active");
+	 
 
-function mobilePhoneContractPage() {
+function contractPage() {
 		var html = "<div class='row'>" + "<h1 class='text-center heading'>" + "Contract" + "</h1>";
-			html += "<div class='infoBox no-padding' id='contract-box'>" + "<div class='col-xs-12 col-sm-12 text-center'>";
-			html += "<a href='" + contractInfo[0].url + "' class='contract-link' target='_blank'>";
-			html += contractInfo[0].name + "</a></div>";
-		for (i=1; i<contractInfo.length; i++) {
+			html += "<div class='standard-spacing'></div>" + "<div class='infoBox no-padding' id='contract-box'>";
+			html += "<div class='col-xs-12 col-sm-12 text-center'>" + "<a href='" + contractInfo[1].url;
+			html += "' class='contract-link' target='_blank'>" + contractInfo[1].name + "</a></div>";
+		for (i=2; i<contractInfo.length; i++) {
 			html += "<div class='col-xs-12 col-sm-12 text-center'><a href='" + contractInfo[i].url;
 			html += "' class='contract-link' target='_blank'>";
-			if (i<30){	
+			if (i<31){	
 			html += "Article ";}
 			else {
 			html += "Appendix ";	
@@ -52,6 +74,8 @@ function mobilePhoneContractPage() {
 		};
 			html += "</div></div>";
 		$('#mainContent').html(html);
+		$('.active').removeClass('active')
+		window.scrollTo(0,0);
 }
 
 function openNav () {
@@ -90,6 +114,7 @@ window.addEventListener("resize", function (){
 	}
 })
 
+
 /*/////////////////////////////////////////////////////////*/
 /*/////FUNCTIONS FOR DYNAMICALLY LOADING CONTENT///////////*/
 /*/////////////////////////////////////////////////////////*/
@@ -105,14 +130,15 @@ $(id).addClass('active');
 $.get(html, function(data) {
   $("#mainContent").html(data);
   if (array == 0) {
-	buildContractDropdown();
+	buildDropdown(contractInfo);
+	buildDropdown(fontananArchives);
 };
 });
+window.scrollTo(0,0)
 }
 
 function buildCalendar(heading, array) {
 	var calendar = document.getElementById("calendar-box");
-	console.log (calendar)
 	var html =  "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow'>" + heading + "</h1>";
 		html += "<div class='text-center externalLink'>" + "<a href=" + calendarUrl[array] + " target='_blank'>";
 		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
@@ -156,10 +182,9 @@ function buildAnswer(heading, array) {
 
 var buildBoardPage = function () {
 	var html = "<div class='row'>" + "<div class='col-xs-12 col-sm-12'>";
-		html += "<h1 class='text-center heading'>" + "Executive Board" + "</h1></div>"
-	var page = document.getElementById("mainContent");
+		html += "<h1 class='text-center heading'>" + "Executive Board" + "</h1></div>" + "<div class='standard-spacing'></div>";
 	for (i=0; i < board.length; i++) {
-		html += "<div class = 'col-xs-12 col-sm-6 contentBox'>" + "<div class='content text-center'>"
+		html += "<div class = 'col-xs-12 col-sm-8 col-md-6 auto-margin contentBox'>" + "<div class='infoBox text-center'>"
 		html += "<span class='execInfo'>" + "<h2>" + board[i].name + "</h2>";
 		html += board[i].occupation + "<br />";
 			if (board[i].fta_leadership) {
@@ -168,12 +193,11 @@ var buildBoardPage = function () {
 		html += "</span>" + "</div>" + "</div>";
 	}
 		html += "</div>" ;
-		$(page).html(html);
+		$('#mainContent').html(html);
 		$(".nav-link").removeClass("active");
 		$("#execBoardLink").addClass("active");
 		closeNav();
 		document.title = "Executive Board";
+		window.scrollTo(0,0);
 
 }
-
-

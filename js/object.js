@@ -1,4 +1,5 @@
 var contractInfo = [
+					{id: "contract-menu", displayName: "contract details", name: "contract", target:"#contract-dropdown"},
 					{id:"0", name:"complete contract", url:"http://nebula.wsimg.com/1a2d2559911a573cc691dd598e48a9b6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
 					{id:"1", name:"agreement", url:"http://nebula.wsimg.com/d565456ce7695707819b00d3dbebae80?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
 					{id:"2", name:"recognition", url:"http://nebula.wsimg.com/84aa06400ed95d6b44746ee9a0b4a43e?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
@@ -50,6 +51,33 @@ var contractInfo = [
 					{id:"i", name:"peer assistance self referral" , url:"http://nebula.wsimg.com/b6f1727bfc702b762e014ccbc677d52d?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"}
 						]
 
+var fontananArchives = [
+					{id: "archive-menu", displayName: "Fontanan Archives", name: "archive", target: "#archive-dropdown"},
+					{month: 'february', year: '2021', url: 'https://indd.adobe.com/view/4d6b96c2-b6d8-48cd-82e4-0633e70f4891'},
+					{month: 'january', year: '2021', url: 'https://indd.adobe.com/view/0aa6a0d9-c785-4292-b38c-7aa040ffc3aa'},
+					{month: 'october', year: '2020', url: 'https://indd.adobe.com/view/dddf931b-b6c7-4c0a-abc3-385c6cdbed7b', transition: true},
+					{month: 'may', year: '2020', url: 'https://indd.adobe.com/view/857e6b03-17e7-478a-8fce-79ab101ec22c'},
+					{month: 'march', year: '2020', url: 'https://indd.adobe.com/view/bf7ed062-7dcf-463a-8167-b7a7979a800e'},
+					{month: 'february', year: '2020', url: 'https://indd.adobe.com/view/622d08c6-b074-4c5c-a0d6-97652d4a2d0c'},
+					{month: 'january', year: '2020', url: 'https://indd.adobe.com/view/6d79fb44-b2b2-4a06-ae54-fcb02789b472'},
+					{month: 'december', year: '2019', url: 'https://indd.adobe.com/view/4c944582-2a03-41d7-9593-948e0bd8cf9f'},
+					{month: 'november', year: '2019', url: 'https://indd.adobe.com/view/85e99633-7963-45ba-924a-153a59b91bd1'},
+					{month: 'october', year: '2019', url: 'https://indd.adobe.com/view/afe819ab-5969-4f73-916b-ff2b3422ce5b'},
+					{month: 'september', year: '2019', url: 'https://indd.adobe.com/view/0b54e73d-bbc0-4a46-acb8-b0ac37ffdcde'},
+					{month: 'august', year: '2019', url: 'https://indd.adobe.com/view/0f1c570c-acce-475c-8554-80bca2169974', transition: true},
+					{month: 'may', year: '2019', url: 'http://nebula.wsimg.com/b317f23b161eb9964a72c1dd4f65888f?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'april', year: '2019', url: 'http://nebula.wsimg.com/8fa2738cfa25354ac0755e5224ae9740?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'march', year: '2019', url: 'http://nebula.wsimg.com/8fe142927e895ec721e0646e29a767f6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'february', year: '2019', url: 'http://nebula.wsimg.com/5f218c13abb6c200459ab53c111b3849?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'january', year: '2019', url: 'http://nebula.wsimg.com/efef0a3b852e647972127e44d03585cf?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'december', year: '2018', url: 'http://nebula.wsimg.com/c0a5fd5ef0f6c19c6804dbbe6569cccb?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'november', year: '2018', url: 'http://nebula.wsimg.com/f70ec633350ccca043b0479189f473b9?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'october', year: '2018', url: 'http://nebula.wsimg.com/2b917417f44e6f67a71dfba53cc7f796?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'september', year: '2018', url: 'http://nebula.wsimg.com/49c2516dd69cf2943e571a7d489724a6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'},
+					{month: 'august', year: '2018', url: 'http://nebula.wsimg.com/26bff84150a886ea333e5bb37a91a895?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1'}
+
+]
+
 var calendarUrl = [
 				"https://nebula.wsimg.com/518cd4c2d9ee267321dcc5dfb1792e4c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", 
 				"https://nebula.wsimg.com/a02a54c6c369bc19837afb7b379b4000?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1",
@@ -98,5 +126,5 @@ var snippet = [
 			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
 			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
 			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
-			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll Information"}
+			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll"}
 ]
