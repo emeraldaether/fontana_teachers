@@ -96,6 +96,7 @@ var answerInfo = [
 					null
 					 ]
 
+
 var overageLink = [
 					{url: 'http://nebula.wsimg.com/8d1ae8b9171cdcebfccfad4a4c903cc9?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
 					name: 'Excess Student Instructions and Worksheet, Middle - High School'},
@@ -126,5 +127,35 @@ var snippet = [
 			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
 			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
 			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
-			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll"}
+			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll"},
+			 {id: 96, url:"snippets/neg-snippet.html", pageId:null, title: "Negotiations"}
+]
+
+var fttNeg = [
+			{id:"ftt-menu", displayName:"From The Table", name: "ftt", target: "#ftt-dropdown"},
+			{day: '18', month: "february", url: "http://nebula.wsimg.com/14c506b8e097ef4750489bfc9023032c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false},
+			{day: '25', month: "january", url: "http://nebula.wsimg.com/22513d04d47a65fb73d555b5fa342b9d?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false, newYear: true},
+			{day: '21', month: "october", url: "http://nebula.wsimg.com/4fcc1f2b84899ccc89da5aeb7ccace43?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false},
+			{day: '14', month: "october", url: "http://nebula.wsimg.com/79eee5e5715e17df72d253f11cb50604?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false},
+			{day: '7', month: "august", url: "http://nebula.wsimg.com/9aad28f88755fcae85606febc65f2ab6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false},
+			{day: '17', month: "july", url: "http://nebula.wsimg.com/f88988b5aa35bc0e439067f4372bb9ed?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: false},
+			{day: '8', month: "july", url: "http://nebula.wsimg.com/51da2d3123ab4ee44929a6b6528ad22c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: true},
+			{day: '26', month:"june", url:"http://nebula.wsimg.com/60271754d9565c7e4adb2470e83688ab?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '27', month:"may", url:"http://nebula.wsimg.com/7fb0190736353550e6251384d056555d?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '12', month:"may", url:"http://nebula.wsimg.com/4618c3577caf57315c0fa613278b8714?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '24', month:"april", url:"http://nebula.wsimg.com/9778bb4cf176896dc6ee5e6c1957c784?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false, newYear: true},
+			{day: '18', month:"february", url:"http://nebula.wsimg.com/aa408503cbe3a53b2f6d6783d9a61f31?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '1', month:"november", url:"http://nebula.wsimg.com/5599089184266014a276d67f4db0ff2a?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '23', month:"october", url:"http://nebula.wsimg.com/61e00e58cb3230c075174f49e1ca64e6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '27', month:"september", url:"http://nebula.wsimg.com/b98b4e92e06e66a99d7b9d6586facfaf?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '16', month:"september", url:"http://nebula.wsimg.com/d90ca1a8f94d8155069fe492625b727f?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '9', month:"september", url:"http://nebula.wsimg.com/d90396928dc06c4b5ad273194cb55f2b?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: true},
+			{day: '7', month:"may", url:"http://nebula.wsimg.com/f49c2133044f23ba76dbff7b2ab12ba7?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '26', month:"april", url:"http://nebula.wsimg.com/8a7abef7ceb8efafd04ddd0e5f109b77?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '22', month:"april", url:"http://nebula.wsimg.com/2f8225e6b5ac40962d1312500d78d568?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '18', month:"april", url:"http://nebula.wsimg.com/06c65ca1291284adeb3b5b5547857735?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '22', month:"february", url:"http://nebula.wsimg.com/ad14f3acdf1ad8f3068868499e44eec6?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '4', month:"february", url:"http://nebula.wsimg.com/2a3e52ecb3878bd1d224af07d6c9cf3d?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
+			{day: '16', month:"january", url:"http://nebula.wsimg.com/5206cbd32c6e5c7aabeea40ee102335b?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false, newYear: true},
+			{day: '13', month:"december", url:"http://nebula.wsimg.com/751994cbc25be34adce728fc5942b035?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false}
 ]

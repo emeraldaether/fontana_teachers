@@ -421,7 +421,7 @@ a.infoBox.no-bg:hover {
 	margin: 0px;
 }
 
-#archive-menu, #contract-menu {
+#archive-menu, #contract-menu, #ftt-menu {
 	height: 200px;
 	overflow: auto;
 	text-align: center;

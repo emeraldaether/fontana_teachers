@@ -13,18 +13,24 @@ document.title = pageTitle
 
 
 function buildDropdown (subject) {
+	var dropdown = subject[0].name;
 	var year = 2021;
 	var html = "<button class='btn dropdown-toggle auto-margin' data-toggle='dropdown'>";
 		html += subject[0].displayName + "<span class='caret'></span></button>" + "<ul class='dropdown-menu' id='" + subject[0].id + "'>";
-	if (subject[0].name == "contract") {
+	if (dropdown == "contract") {
 		html += "<li><a href='#' onclick='contractPage()'>" + "View On New Page" + "</a></li>";
-	} else if (subject[0].name == "archive") {
+	} else if (dropdown == "archive" || dropdown == "ftt") {
 		html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
-		year--;
+		if (dropdown == "archive") {
+			year--;};
 		};
 	for (i=1; i<subject.length; i++) {
-		html += "<li><a href=" + subject[i].url + " class='dropdown-item " + subject[0].name + "-link' target='_blank'>";
-		if (subject[0].name == "contract") {
+		var month = subject[i].month;
+		var day = subject[i].day;
+		var transition = subject[i].transition;
+		var yearChange = subject[i].newYear;
+		html += "<li><a href=" + subject[i].url + " class='dropdown-item " + dropdown + "-link' target='_blank'>";
+		if (dropdown == "contract") {
 			if (i != 1){
 				if (i < 31) {
 					html += "article";
@@ -34,14 +40,22 @@ function buildDropdown (subject) {
 					html += " " + subject[i].id + " - ";
 			};
 			html += subject[i].name + "</a></li>";
-			} else if (subject[0].name == "archive") {
-					html += subject[i].month + " " + subject[i].year;
+			} else if (dropdown == "archive") {
+					html += month + " " + subject[i].year;
 					html += "</a></li>";
 					if (subject[i].transition == true){
 						html += "<li class='dropdown-header'>" + (year - 1) + " - " + year;
 						year--;
 						html += "</li>"
 					 };
+				} else if (dropdown == "ftt") {
+					html += month + " " + day + ", " + year + "</a></li>"
+						if (yearChange == true){
+							year--
+						}
+						if (transition == true) {
+					html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>"
+						}
 				}
 			
 		}
@@ -132,6 +146,8 @@ $.get(html, function(data) {
   if (array == 0) {
 	buildDropdown(contractInfo);
 	buildDropdown(fontananArchives);
+} else if (array == 6) {
+	buildDropdown(fttNeg)
 };
 });
 window.scrollTo(0,0)
@@ -151,8 +167,8 @@ function buildCalendar(heading, array) {
 
 function buildAnswer(heading, array) {
 	var answer = document.getElementById("answer-box")
-	var html = "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow' id='answer-heading'>";
-		html += heading + "</h1>";
+	var html = "<div class='standard-spacing'></div>" + "<div class='col-xs-12 col-sm-10 auto-margin'>";
+		html += "<h1 class='text-center heading-no-shadow' id='answer-heading'>" + heading + "</h1>";
 		if (array != 2){
 			if (array != 6){				
 			html += "<div class='d-none d-lg-block'>" + "<div class='text-center externalLink'>" + "<a href=" + answerInfo[array] + " target='_blank'>";
