@@ -32,6 +32,10 @@ a:hover {
 	margin: 50px auto;
 }
 
+.top-margin {
+	margin-top: 20px;
+}
+
 .line-sm {
 	height: 1px;
 	width: 75%;
@@ -883,7 +887,7 @@ a.infoBox.no-bg:hover {
 		width: 600px;
 	}
 	
-	form {
+	#home-form {
 		margin-top: 140px;
 	}
 

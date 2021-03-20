@@ -1,16 +1,61 @@
-var navBar = document.getElementById("collapsableNav");
-
-var pageTitle = "Home";
-var overlay = document.getElementById("overlay");
-var screenHeight = window.innerHeight;
 var archiveButton = document.getElementById("archive-menu");
-var screenWidth = window.innerWidth;
+var body = document.getElementsByTagName('body')[0];
+var contentLinks, navLinks, target;
+var headerNavList = document.getElementById('nav-list');
 var homePage = window.location.href;
+var mainContent = document.getElementById('mainContent')
+var navBar = document.getElementById("collapsableNav");
+var overlay = document.getElementById("overlay");
+var pageTitle = "Home";
+var screenHeight = window.innerHeight;
+var screenWidth = window.innerWidth;
+ 	navLinks = document.getElementsByClassName('internal-link');
+	document.title = pageTitle;
 
+function toArray(obj) {
+	var array = [];
+	for (i = obj.length >>> 0; i--;) 
+		{
+		array[i] = obj[i];
+	}
+	return array;
+}
 
-document.title = pageTitle
+window.addEventListener("load", function() {	
+	if (mainContent.childNodes[0].nodeValue = " ") {
+		buildNewPage(0);
+		$('#homeLink').addClass('active');
+	}	 			
+}, false)
 
+function linkArrays () {
+	var contentLinks = document.getElementsByClassName('internal-home-link');
+	var linkArray = toArray(navLinks);
+	var contentLinksArray = toArray(contentLinks);
+	    combinedArray = linkArray.concat(contentLinksArray);
+	    for (i=0; i < combinedArray.length; i++) {
+	    	console.log(i + ". " + combinedArray[i].id)
+	    }
+	    console.log("-------------------")
 
+}
+
+body.addEventListener("click", function(e) {
+	 	target = e.target;
+	var elParent = target.parentNode;
+
+	if (target.nodeName == "A") {
+		for (i=0; i<combinedArray.length; i++)
+			if (combinedArray[i].id == target.id) {
+				if (i != 2) {
+					buildNewPage(i);
+				} else {
+					buildBoardPage();
+				};
+			}
+	} 
+
+}, false)
 
 function buildDropdown (subject) {
 	var dropdown = subject[0].name;
@@ -18,7 +63,7 @@ function buildDropdown (subject) {
 	var html = "<button class='btn dropdown-toggle auto-margin' data-toggle='dropdown'>";
 		html += subject[0].displayName + "<span class='caret'></span></button>" + "<ul class='dropdown-menu' id='" + subject[0].id + "'>";
 	if (dropdown == "contract") {
-		html += "<li><a href='#' onclick='contractPage()'>" + "View On New Page" + "</a></li>";
+		html += "<li><a href='#' class='internal-home-link' onclick='contractPage()'>" + "View On New Page" + "</a></li>";
 	} else if (dropdown == "archive" || dropdown == "ftt") {
 		html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
 		if (dropdown == "archive") {
@@ -63,12 +108,7 @@ function buildDropdown (subject) {
 	
 }
 
-$.get(snippet[0].url, function(data) {
-	 $("#mainContent").html(data); 
-	 buildDropdown(contractInfo);
-	 buildDropdown(fontananArchives);
-	});
-	$(snippet[0].pageId).addClass("active");
+
 	 
 
 function contractPage() {
@@ -87,7 +127,7 @@ function contractPage() {
 			html += contractInfo[i].id + " - " + contractInfo[i].name + "</a></div>";
 		};
 			html += "</div></div>";
-		$('#mainContent').html(html);
+		$(mainContent).html(html);
 		$('.active').removeClass('active')
 		window.scrollTo(0,0);
 }
@@ -133,24 +173,52 @@ window.addEventListener("resize", function (){
 /*/////FUNCTIONS FOR DYNAMICALLY LOADING CONTENT///////////*/
 /*/////////////////////////////////////////////////////////*/
 
-var buildNewPage = function(array) {
+// var buildNewPage = function(array) {
+// 	closeNav();
+// 	document.title = snippet[array].title;
+// 	var id = snippet[array].pageId;
+// 	var html = snippet[array].url;
+// 	$(".nav-link").removeClass('active');
+// 	$(".smallFooterLink>a").removeClass('active');
+// $(id).addClass('active');
+// $.get(html, function(data) {
+//   $(mainContent).html(data);
+//   if (array == 0) {
+// 	buildDropdown(contractInfo);
+// 	buildDropdown(fontananArchives);		
+// } else if (array == 6) {
+// 	buildDropdown(fttNeg)
+// };
+// linkArrays();
+// });
+// window.scrollTo(0,0)
+// }
+
+function buildNewPage(array) {
 	closeNav();
-	document.title = snippet[array].title;
-	var id = snippet[array].pageId;
+	$('.active').removeClass('active')
+	if (array < 6) {
+		document.title = snippet[array].title;		
+		$(target).addClass('active');
+	} else {
+		if (document.title == "Home") {
+			document.title = snippet[array].title;
+		} else if (document.title == "") {
+
+		}
+	}
 	var html = snippet[array].url;
-	$(".nav-link").removeClass('active');
-	$(".smallFooterLink>a").removeClass('active');
-$(id).addClass('active');
-$.get(html, function(data) {
-  $("#mainContent").html(data);
-  if (array == 0) {
-	buildDropdown(contractInfo);
-	buildDropdown(fontananArchives);
-} else if (array == 6) {
-	buildDropdown(fttNeg)
-};
-});
+	$.get(html, function(data) {
+		$(mainContent).html(data);
+		if (array == 0) {
+		buildDropdown(contractInfo);
+		buildDropdown(fontananArchives);		
+}
+		linkArrays();	
+	})
+	
 window.scrollTo(0,0)
+	
 }
 
 function buildCalendar(heading, array) {
@@ -209,7 +277,7 @@ var buildBoardPage = function () {
 		html += "</span>" + "</div>" + "</div>";
 	}
 		html += "</div>" ;
-		$('#mainContent').html(html);
+		$(mainContent).html(html);
 		$(".nav-link").removeClass("active");
 		$("#execBoardLink").addClass("active");
 		closeNav();
