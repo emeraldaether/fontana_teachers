@@ -248,6 +248,7 @@ a.infoBox.no-bg:hover {
 #collapsableNav li a:hover, #collapsable li a:active, #collapsableNav li a.active, .dropdown-item:hover  {
 	background-color: #3E517A;
 	color: #EBF8FF;
+	text-shadow: 1px 1px 2px #3E517A;
 }
 
 
@@ -446,6 +447,10 @@ a.infoBox.no-bg:hover {
 	background-color: #D7DCEA;
 }
 
+.info-list:nth-child(even) {
+	background-color: #D7DCEA;
+}
+
 /*#contract-box>div:nth-child(even)>a {
 	color: #EBF8FF;
 }
@@ -486,6 +491,7 @@ a.infoBox.no-bg:hover {
 #footer .smallFooterLink a.active {
 	background-color: #EBF8FF;
 	color: #3E517A;
+	text-shadow: 1px 1px 2px #3E517A;
 }
 
 #footer a:hover, #footer a:active {
@@ -859,7 +865,7 @@ a.infoBox.no-bg:hover {
 		margin-top: 20px;
 	}
 
-	#nav-list>li>a {
+	.internal-link {
 		margin: 10px 0px 10px 0px;
 		padding: 10px 50px 10px 50px;
 		text-align: center;

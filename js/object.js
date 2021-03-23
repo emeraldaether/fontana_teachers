@@ -123,16 +123,6 @@ var board = [
 			 {name:"Glennon Poirier", occupation:"high school director", fta_leadership: false},
 			 {name:"Mark Schulte", occupation:"high school director", fta_leadership: false}]
 
-// var snippet = [
-// 			 {id: 90, url:"snippets/home-snippet.html", pageId:"#homeLink", title:"Home"},
-// 			 {id: 91, url:"snippets/about-snippet.html", pageId:"#aboutUsLink", title:"About Us"},
-// 			 {id: 92, url:"snippets/calendar-snippet.html", pageId:"#calendarLink", title:"Calendars"},
-// 			 {id: 93, url:"snippets/faq-snippet.html", pageId:"#faqLink", title:"F.A.Q.'s"},
-// 			 {id: 94, url:"snippets/covid-snippet.html", pageId:null, title:"Covid-19 Resources"},
-// 			 {id: 95, url:"snippets/payroll-snippet.html", pageId:"#payrollLink", title:"FUSD Payroll"},
-// 			 {id: 96, url:"snippets/neg-snippet.html", pageId:null, title: "Negotiations"}
-// ]
-
 var snippet = [
 			{id: 0, url: "snippets/home-snippet.html", title: "Home"},
 			{id: 1, url: "snippets/about-snippet.html", title: "About Us"},
@@ -140,17 +130,12 @@ var snippet = [
 			{id: 3, url: "snippets/payroll-snippet.html", title: "FUSD Payroll"},
 			{id: 4, url: "snippets/faq-snippet.html", title: "Frequently Asked Questions"},
 			{id: 5, url: "snippets/calendar-snippet.html", title: "Calendars"},
-			{id: 6, url: "snippets/evals-snippet.html", title: "Evaluations"}
+			{id: 6, url: "snippets/evals-snippet.html", title: "Evaluations"},
+			{id: 7, url: "snippets/benefits-snippet.html", title: "Member Benefits"},
+			{id: 8, url: "snippets/eval-snippet.html", title: "Evaluations"},
+			{id: 9, url: "snippets/dev-snippet.html", title: "Professional Development" }
 
 ]
-
-var homeSnippets = [
-			{id: 0, url: "snippets/covid-snippet.html", title: "Covid-19 Resources"},
-			{id: 1, url: "", title: "Member Benefits"},
-			{id: 2, url: "", title: "Professional Development"},
-			{id: 3, url: "", title: "Contract"}
-]
-
 
 var fttNeg = [
 			{id:"ftt-menu", displayName:"From The Table", name: "ftt", target: "#ftt-dropdown"},
