@@ -10,6 +10,7 @@ var pageTitle = "Home";
 var screenHeight = window.innerHeight;
 var screenWidth = window.innerWidth;
  	navLinks = document.getElementsByClassName('internal-link');
+
 	document.title = pageTitle;
 
 function toArray(obj) {
@@ -43,8 +44,9 @@ function linkArrays () {
 body.addEventListener("click", function(e) {
 	 	target = e.target;
 	var elParent = target.parentNode;
-
-	if (target.nodeName == "A") {
+		if (target == contractPageLink || target == contractPageLink2) {
+		contractPage();
+	} else {if (target.nodeName == "A") {
 		for (i=0; i<combinedArray.length; i++)
 			if (combinedArray[i].id == target.id) {
 				if (i != 2) {
@@ -53,7 +55,7 @@ body.addEventListener("click", function(e) {
 					buildBoardPage();
 				};
 			}
-	} 
+	};}
 
 }, false)
 
@@ -63,10 +65,11 @@ function buildDropdown (subject) {
 	var html = "<button class='btn dropdown-toggle auto-margin' data-toggle='dropdown'>";
 		html += subject[0].displayName + "<span class='caret'></span></button>" + "<ul class='dropdown-menu' id='" + subject[0].id + "'>";
 	if (dropdown == "contract") {
-		html += "<li><a href='#' class='internal-home-link' onclick='contractPage()'>" + "View On New Page" + "</a></li>";
-	} else if (dropdown == "archive" || dropdown == "ftt") {
+		html += "<li><a href='#' id='contract-page-link'>" + "View On New Page" + "</a></li>";
+	
+	} else if (dropdown == "archive" || dropdown == "ftt" || dropdown == "mou") {
 		html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
-		if (dropdown == "archive") {
+		if (dropdown == "archive" || dropdown == "mou") {
 			year--;};
 		};
 	for (i=1; i<subject.length; i++) {
@@ -101,11 +104,18 @@ function buildDropdown (subject) {
 						if (transition == true) {
 					html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>"
 						}
+				} else if (dropdown == "mou") {
+					html += subject[i].name + "</a></li>";
+					if (subject[i].transition == true) {
+						html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
+						year--;
+					}
 				}
 			
 		}
 		$(subject[0].target).html(html);
-	
+		contractPageLink = document.getElementById('contract-page-link');
+		contractPageLink2 = document.getElementById('contract-page-link-2')
 }
 
 
@@ -213,6 +223,9 @@ function buildNewPage(array) {
 		if (array == 0) {
 		buildDropdown(contractInfo);
 		buildDropdown(fontananArchives);		
+} else if (document.title == "Negotiations") {
+	buildDropdown(fttNeg)
+	buildDropdown(mouNeg)
 }
 		linkArrays();	
 	})

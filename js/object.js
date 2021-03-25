@@ -133,7 +133,8 @@ var snippet = [
 			{id: 6, url: "snippets/evals-snippet.html", title: "Evaluations"},
 			{id: 7, url: "snippets/benefits-snippet.html", title: "Member Benefits"},
 			{id: 8, url: "snippets/eval-snippet.html", title: "Evaluations"},
-			{id: 9, url: "snippets/dev-snippet.html", title: "Professional Development" }
+			{id: 9, url: "snippets/dev-snippet.html", title: "Professional Development" },
+			{id: 10, url: "snippets/neg-snippet.html", title: "Negotiations"}
 
 ]
 
@@ -164,4 +165,37 @@ var fttNeg = [
 			{day: '4', month:"february", url:"http://nebula.wsimg.com/2a3e52ecb3878bd1d224af07d6c9cf3d?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false},
 			{day: '16', month:"january", url:"http://nebula.wsimg.com/5206cbd32c6e5c7aabeea40ee102335b?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false, newYear: true},
 			{day: '13', month:"december", url:"http://nebula.wsimg.com/751994cbc25be34adce728fc5942b035?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1" , transition: false}
+]
+
+var mouNeg = [
+			{id: "mou-menu", displayName: "MOU's", name: "mou", target: "#mou-dropdown"},
+			{name: "Duration", url: "http://nebula.wsimg.com/c39c4a9ae6b32c05fa1faf8042478366?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "kinder combos", url: "http://nebula.wsimg.com/101992ac9ab6d1d198938d9bc5878b4e?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "elementary sdc", url: "http://nebula.wsimg.com/05cef757832406c393f255a946f4f1d7?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "slp salary schedule", url: "http://nebula.wsimg.com/6fdab35b9689348967e414c89679650c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "innovations", url: "http://nebula.wsimg.com/6a2ef525bbd8c2b0a38377e110d393a9?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "special education definitions", url: "http://nebula.wsimg.com/e782ea442b9258da214a1c1a369a63b2?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "early childhood sdc", url: "http://nebula.wsimg.com/f706e59ec6a473f3b9f51807ed21c9dd?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "special education caseload", url: "http://nebula.wsimg.com/29b97e62c7f61acf5c5c2d01e8e13c61?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "unit members w/ spouse employees", url: "http://nebula.wsimg.com/95f2310baeaa6648ef40d6843e6ffcba?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "temp. reduction lifetime benefits", url: "http://nebula.wsimg.com/c14f75aa4ddcb54aa4b6cf8886ebc4e1?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "distance learning 2020", url: "http://nebula.wsimg.com/024101b4efbedb645dec008b954fc182?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "preschool conferences", url: "http://nebula.wsimg.com/8e72ce6745a988e82ef059cc81eb7ebc?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "extra period assignment", url: "http://nebula.wsimg.com/b6fda12146433f8c917cbbb4f259d238?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "early notification", url: "http://nebula.wsimg.com/1a1f7552abd259428f906e251f62dd94?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "student support time", url: "http://nebula.wsimg.com/cc331edadcd9d29c9a1bf624c3674687?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "preschool parent teacher conferences, spring", url: "http://nebula.wsimg.com/3c87a057fa83b8b5459b7d1ba18cc17b?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "elpac testing", url: "http://nebula.wsimg.com/8b88e8022040d81ac72a1e94f5f1b466?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1", transition: true},
+			{name: "k-6 enrichment", url: "http://nebula.wsimg.com/4abfd3f9391df9e909b63a064af17cc5?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "grade span adjustment", url: "http://nebula.wsimg.com/3b9a032c1b4642c82b71c1be9c2d59d8?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "kinder flex", url: "http://nebula.wsimg.com/6d2ee5556c1a257c266d33c8d6d74b8c?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "early retirement", url: "http://nebula.wsimg.com/de721a4d09aec44d76cc9608bf8c1da2?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "k-3 prep", url: "http://nebula.wsimg.com/d43c3670cd52c5893ec3983e66d8c9bf?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "minimum day change", url: "http://nebula.wsimg.com/c0863e1bc8d3f46d3dcff6015172ab8f?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "slp salary schedule", url: "http://nebula.wsimg.com/44f7bd8782d7a64a13447a8933a2e958?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "code to the future", url: "http://nebula.wsimg.com/f00def42cab53e03a387317eea254d71?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "seqouia innovation", url: "http://nebula.wsimg.com/a6306f1c7eddf5c7e34fc4159ed07143?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "covid-19 march shutdown", url: null, transition: true },
+			{name: "early notification", url: "http://nebula.wsimg.com/99cd3893c72e15c78e8ed9feee762909?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{name: "additional workdays", url: "http://nebula.wsimg.com/f4f54523b3014c67e9e8e24ea9db86eb?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"}
 ]
