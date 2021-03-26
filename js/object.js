@@ -128,7 +128,7 @@ var snippet = [
 			{id: 3, url: "snippets/payroll-snippet.html", title: "FUSD Payroll"},
 			{id: 4, url: "snippets/faq-snippet.html", title: "Frequently Asked Questions"},
 			{id: 5, url: "snippets/calendar-snippet.html", title: "Calendars"},
-			{id: 6, url: "snippets/evals-snippet.html", title: "Evaluations"},
+			{id: 6, url: "snippets/covid-snippet.html", title: "Covid-19 Information"},
 			{id: 7, url: "snippets/benefits-snippet.html", title: "Member Benefits"},
 			{id: 8, url: "snippets/eval-snippet.html", title: "Evaluations"},
 			{id: 9, url: "snippets/dev-snippet.html", title: "Professional Development" },
