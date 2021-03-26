@@ -20,7 +20,7 @@ a {
 	color: #3E517A;
 }
 
-a:hover {
+a:hover, a.active {
 	color: #EBF8FF;
 	text-shadow: 1px 1px 2px #3E517A;
 	font-style: italic;
@@ -457,10 +457,16 @@ a.infoBox.no-bg:hover {
 	background-color: #D7DCEA;
 }
 
-/*#contract-box>div:nth-child(even)>a {
-	color: #EBF8FF;
+#grievance-team {
+	flex-direction: row;
+	list-style: none;
 }
-*/
+
+#grievance-team>li {
+	display: inline;
+	margin: auto;
+}
+
 /*///////////////////////////////////////////*/
 /*///////////////////////////////////////////*/
 /*///////////////xFOOTER/////////////////////*/
@@ -903,7 +909,7 @@ a.infoBox.no-bg:hover {
 		margin-top: 140px;
 	}
 
-	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active, {
+	.calendar-nav.active>a, .calendar-nav>a:hover, .calendar-nav>a:active, .frame-link.active {
 		color: #EBF8FF;
 		background-color: #3E517A;
 	}

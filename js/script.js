@@ -42,22 +42,27 @@ function linkArrays () {
 }
 
 body.addEventListener("click", function(e) {
+	 
 	 	target = e.target;
 	var elParent = target.parentNode;
 		if (target == contractPageLink || target == contractPageLink2) {
 		contractPage();
 	} else {if (target.nodeName == "A") {
+		if ($(e.target).hasClass('frame-link')) {
+		iFrameBuilder(e);} else {
 		for (i=0; i<combinedArray.length; i++)
 			if (combinedArray[i].id == target.id) {
 				if (i != 2) {
 					buildNewPage(i);
 				} else {
 					buildBoardPage();
-				};
+				};}
 			}
 	};}
 
-}, false)
+})
+
+
 
 function buildDropdown (subject) {
 	var dropdown = subject[0].name;
@@ -183,27 +188,6 @@ window.addEventListener("resize", function (){
 /*/////FUNCTIONS FOR DYNAMICALLY LOADING CONTENT///////////*/
 /*/////////////////////////////////////////////////////////*/
 
-// var buildNewPage = function(array) {
-// 	closeNav();
-// 	document.title = snippet[array].title;
-// 	var id = snippet[array].pageId;
-// 	var html = snippet[array].url;
-// 	$(".nav-link").removeClass('active');
-// 	$(".smallFooterLink>a").removeClass('active');
-// $(id).addClass('active');
-// $.get(html, function(data) {
-//   $(mainContent).html(data);
-//   if (array == 0) {
-// 	buildDropdown(contractInfo);
-// 	buildDropdown(fontananArchives);		
-// } else if (array == 6) {
-// 	buildDropdown(fttNeg)
-// };
-// linkArrays();
-// });
-// window.scrollTo(0,0)
-// }
-
 function buildNewPage(array) {
 	closeNav();
 	$('.active').removeClass('active')
@@ -234,48 +218,89 @@ window.scrollTo(0,0)
 	
 }
 
-function buildCalendar(heading, array) {
-	var calendar = document.getElementById("calendar-box");
-	var html =  "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow'>" + heading + "</h1>";
-		html += "<div class='text-center externalLink'>" + "<a href=" + calendarUrl[array] + " target='_blank'>";
-		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
-		html += "frameborder = '0 '" + "width='100%' height='650px'" + "</iframe></div>";
-	$(calendar).html(html);
-	$('.calendar-nav').removeClass('active');
-	var activeLink = '.calendar-nav' + ':nth-child(' + (array + 1) + ")";
-	$(activeLink).addClass('active')
-}
 
-function buildAnswer(heading, array) {
-	var answer = document.getElementById("answer-box")
-	var html = "<div class='standard-spacing'></div>" + "<div class='col-xs-12 col-sm-10 auto-margin'>";
-		html += "<h1 class='text-center heading-no-shadow' id='answer-heading'>" + heading + "</h1>";
-		if (array != 2){
-			if (array != 6){				
-			html += "<div class='d-none d-lg-block'>" + "<div class='text-center externalLink'>" + "<a href=" + answerInfo[array] + " target='_blank'>";
-			html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + answerInfo[array];
-			html += "frameborder = '0' " + "width='100%' height='650px'" + "</iframe></div></div>";
-			$('#answer-heading').addClass('d-none');
-		} 
-		else {
+function iFrameBuilder(e) {
+	target = e.target;
+	var frameContent = document.getElementsByClassName('frame-link');
+	var frameHeading = target.childNodes[0].nodeValue;
+	if (document.title == "Calendars") {
+		var iFrame = document.getElementById('calendar-box');
+		var source = calendarUrl;
+	} else if (document.title == "Frequently Asked Questions") {
+		var iFrame = document.getElementById('answer-box');
+		var source = answerInfo;
+	}
+	for (i=0; i<frameContent.length; i++) {
+		if (target == frameContent[i]) {
+			var innerContent = source[i];
+		}
+	}
+	var html = "<div class='col-xs-12 col-sm-10 auto-margin'><h1 class='text-center heading-no-shadow'>" + frameHeading + "</h1>";
+	if (innerContent != answerInfo[2]) {
+		if (innerContent != answerInfo[4]) {
+		html += "<div class='text-center externalLink'><a href='" + innerContent + " target='_blank'>";
+		html += "Click Here to Open in New Page</a></div><iframe src='" + innerContent + "frameborder='0'";
+		html += " height='650px' width='100%'></iframe></div>"} 
+			else {
 			html += "<div class='line-lg'></div>";
 			for (i=0; i<overageLink.length; i++) {
 				html += "<div class='col-lg-12 auto-margin text-center faq-nav'>" + "<a href=" + "'" + overageLink[i].url + "'";
-				html += " target=_blank>" + overageLink[i].name + "</a></div>"
-					}
-				html += "</div>"
+				html += " target=_blank>" + overageLink[i].name + "</a></div>"}
+	};} else {
+		html += "<div class='line-lg'></div>";
+		html += "<div class='col-lg-8 auto-margin text-center'>" + "<p>" + "Part Time Dues are $750" + "</p>";
+		html += "<p>" + "Full Time Dues are $1350" + "</p></div>";
 
-		}
-	} else {
-			html += "<div class='line-lg'></div>";
-			html += "<div class='col-lg-8 auto-margin text-center'>" + "<p>" + "Part Time Dues are $750" + "</p>";
-			html += "<p>" + "Full Time Dues are $1350" + "</p></div>";
 	}
-	$(answer).html(html);
-	$('.faq-nav').removeClass('active');
-	var activeLink = '.faq-nav' + ':nth-child(' + (array + 1) + ")";
-	$(activeLink).addClass('active')
+		$(iFrame).html(html);
+		$('.frame-link').removeClass('active');
+		$(target).addClass('active');
+		console.log(innerContent)
 }
+
+
+// function buildCalendar(heading, array) {
+// 	var calendar = document.getElementById("calendar-box");
+// 	var html =  "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow'>" + heading + "</h1>";
+// 		html += "<div class='text-center externalLink'>" + "<a href=" + calendarUrl[array] + " target='_blank'>";
+// 		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
+// 		html += "frameborder = '0 '" + "width='100%' height='650px'" + "</iframe></div>";
+// 	$(calendar).html(html);
+// 	$('.calendar-nav').removeClass('active');
+// 	var activeLink = '.calendar-nav' + ':nth-child(' + (array + 1) + ")";
+// 	$(activeLink).addClass('active')
+// }
+
+// function buildAnswer(heading, array) {
+// 	var answer = document.getElementById("answer-box")
+// 	var html = "<div class='standard-spacing'></div>" + "<div class='col-xs-12 col-sm-10 auto-margin'>";
+// 		html += "<h1 class='text-center heading-no-shadow' id='answer-heading'>" + heading + "</h1>";
+// 		if (array != 2){
+// 			if (array != 6){				
+// 			html += "<div class='d-none d-lg-block'>" + "<div class='text-center externalLink'>" + "<a href=" + answerInfo[array] + " target='_blank'>";
+// 			html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + answerInfo[array];
+// 			html += "frameborder = '0' " + "width='100%' height='650px'" + "</iframe></div></div>";
+// 			$('#answer-heading').addClass('d-none');
+// 		} 
+// 		else {
+// 			html += "<div class='line-lg'></div>";
+// 			for (i=0; i<overageLink.length; i++) {
+// 				html += "<div class='col-lg-12 auto-margin text-center faq-nav'>" + "<a href=" + "'" + overageLink[i].url + "'";
+// 				html += " target=_blank>" + overageLink[i].name + "</a></div>"
+// 					}
+// 				html += "</div>"
+
+// 		}
+// 	} else {
+// 			html += "<div class='line-lg'></div>";
+// 			html += "<div class='col-lg-8 auto-margin text-center'>" + "<p>" + "Part Time Dues are $750" + "</p>";
+// 			html += "<p>" + "Full Time Dues are $1350" + "</p></div>";
+// 	}
+// 	$(answer).html(html);
+// 	$('.faq-nav').removeClass('active');
+// 	var activeLink = '.faq-nav' + ':nth-child(' + (array + 1) + ")";
+// 	$(activeLink).addClass('active')
+// }
 
 var buildBoardPage = function () {
 	var html = "<div class='row'>" + "<div class='col-xs-12 col-sm-12'>";

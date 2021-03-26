@@ -89,12 +89,10 @@ var calendarUrl = [
 				]
 
 var answerInfo = [
-					'http://nebula.wsimg.com/63cc26c968abe9135b977f2f41faa845?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1', 
+					'http://nebula.wsimg.com/63cc26c968abe9135b977f2f41faa845?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
+					null, 
 					'http://nebula.wsimg.com/c386cf0a2282a78f269108e8fe78fa90?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					null,
 					'http://nebula.wsimg.com/42de1c962e5c94209c040119d6406887?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1',
-					null,
-					null,
 					null
 					 ]
 
@@ -134,7 +132,8 @@ var snippet = [
 			{id: 7, url: "snippets/benefits-snippet.html", title: "Member Benefits"},
 			{id: 8, url: "snippets/eval-snippet.html", title: "Evaluations"},
 			{id: 9, url: "snippets/dev-snippet.html", title: "Professional Development" },
-			{id: 10, url: "snippets/neg-snippet.html", title: "Negotiations"}
+			{id: 10, url: "snippets/neg-snippet.html", title: "Negotiations"},
+			{id: 11, url: "snippets/grievance-snippet.html", title: "Grievance"}
 
 ]
 
