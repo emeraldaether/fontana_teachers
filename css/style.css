@@ -424,12 +424,12 @@ a.infoBox.no-bg:hover {
 }
 
 #archiveBox {
-	min-height: 300px;
+	min-height: 100px;
 	margin: 0px;
 }
 
-#archive-menu, #contract-menu, #ftt-menu, #mou-menu{
-	height: 200px;
+#archive-menu, #contract-menu, #ftt-menu, #mou-menu, #salary-menu{
+	max-height: 200px;
 	overflow: auto;
 	text-align: center;
 	max-width: 300px;
@@ -687,6 +687,10 @@ a.infoBox.no-bg:hover {
 		margin-top: 100px;
 	}
 
+	#help-box h2 {
+		font-size: 1.25em;
+	}
+
 	.heading {
 		font-size: 1.25em;
 	}
@@ -736,6 +740,10 @@ a.infoBox.no-bg:hover {
 
 	.heading>a, .heading {
 		padding: 10px;
+	}
+
+	#help-box h2 {
+		font-size: 0.75em;
 	}
 	
 	#footer>.container-fluid {

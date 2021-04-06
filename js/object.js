@@ -198,3 +198,15 @@ var mouNeg = [
 			{name: "early notification", url: "http://nebula.wsimg.com/99cd3893c72e15c78e8ed9feee762909?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
 			{name: "additional workdays", url: "http://nebula.wsimg.com/f4f54523b3014c67e9e8e24ea9db86eb?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"}
 ]
+
+var salSched = [
+			{id: "salary-menu", displayName: "Salary Schedule", name: "salary-schedule", target: "#sal-dropdown"},
+			{id: 1, name: "186 Day", url: "http://nebula.wsimg.com/678dd054bfc5ea3810016361273e25ec?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{id: 2, name: "193 Day", url: "http://nebula.wsimg.com/3b67fbaf232325279417d12e9201d992?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{id: 3, name: "203 Day", url: "http://nebula.wsimg.com/2e76d8f780217382bc426f6f89d12f72?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{id: 4, name: "Preschool", url: "http://nebula.wsimg.com/92e2f4efdd12ea43e67f046cbbab91ba?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"},
+			{id: 5, name: "SLP", url: "http://nebula.wsimg.com/ad334abfda9c95dbbf4cc6835f2ac863?AccessKeyId=6A70C08022DEA068CA48&disposition=0&alloworigin=1"}]
+
+var helpInfo = {message: "IF YOU NEED HELP AND ARE NOT SURE WHERE TO START, PLEASE FEEL FREE TO CONTACT CONNIE VERHULST, YOUR UNION PRESIDENT.",
+				phone:"(909) 251-5719",
+				email:"FTAPRES@FONTANATEACHERS.ORG"}

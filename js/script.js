@@ -42,14 +42,24 @@ function linkArrays () {
 }
 
 body.addEventListener("click", function(e) {
-	 
 	 	target = e.target;
 	var elParent = target.parentNode;
+	var help = document.getElementById("helpLink");
 		if (target == contractPageLink || target == contractPageLink2) {
 		contractPage();
-	} else {if (target.nodeName == "A") {
+	} else if (target.nodeName == "A") {
 		if ($(e.target).hasClass('frame-link')) {
-		iFrameBuilder(e);} else {
+		iFrameBuilder(e);} else 
+			if (target == help) {
+				e.preventDefault();
+				var box = $("#help-box");
+				var html = "<div class='col-xs-12 col-sm-12'><p class='text-center'>";
+					html += helpInfo.message + "</p><h2 class='text-center heading-no-shadow'>E-mail: ";
+					html += helpInfo.email + "</h2><h2 class='text-center heading-no-shadow'>Phone: ";
+					html += helpInfo.phone + "</h2></div>"
+					$(box).html(html);
+			} else {
+				e.preventDefault();
 		for (i=0; i<combinedArray.length; i++)
 			if (combinedArray[i].id == target.id) {
 				if (i != 2) {
@@ -57,8 +67,9 @@ body.addEventListener("click", function(e) {
 				} else {
 					buildBoardPage();
 				};}
+
 			}
-	};}
+	};
 
 })
 
@@ -115,6 +126,8 @@ function buildDropdown (subject) {
 						html += "<li class='dropdown-header'>" + (year - 1) + " - " + year + "</li>";
 						year--;
 					}
+				} else {
+					html += subject[i].name +"</a></li>"
 				}
 			
 		}
@@ -210,6 +223,8 @@ function buildNewPage(array) {
 } else if (document.title == "Negotiations") {
 	buildDropdown(fttNeg)
 	buildDropdown(mouNeg)
+} else if (document.title == "FUSD Payroll") {
+	buildDropdown(salSched)
 }
 		linkArrays();	
 	})
@@ -257,50 +272,6 @@ function iFrameBuilder(e) {
 		$(target).addClass('active');
 		console.log(innerContent)
 }
-
-
-// function buildCalendar(heading, array) {
-// 	var calendar = document.getElementById("calendar-box");
-// 	var html =  "<div class='col-xs-12 col-sm-10 auto-margin'>" + "<h1 class='text-center heading-no-shadow'>" + heading + "</h1>";
-// 		html += "<div class='text-center externalLink'>" + "<a href=" + calendarUrl[array] + " target='_blank'>";
-// 		html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + calendarUrl[array];
-// 		html += "frameborder = '0 '" + "width='100%' height='650px'" + "</iframe></div>";
-// 	$(calendar).html(html);
-// 	$('.calendar-nav').removeClass('active');
-// 	var activeLink = '.calendar-nav' + ':nth-child(' + (array + 1) + ")";
-// 	$(activeLink).addClass('active')
-// }
-
-// function buildAnswer(heading, array) {
-// 	var answer = document.getElementById("answer-box")
-// 	var html = "<div class='standard-spacing'></div>" + "<div class='col-xs-12 col-sm-10 auto-margin'>";
-// 		html += "<h1 class='text-center heading-no-shadow' id='answer-heading'>" + heading + "</h1>";
-// 		if (array != 2){
-// 			if (array != 6){				
-// 			html += "<div class='d-none d-lg-block'>" + "<div class='text-center externalLink'>" + "<a href=" + answerInfo[array] + " target='_blank'>";
-// 			html += "Click Here to Open in New Page" + "</a></div>" + "<iframe src=" + answerInfo[array];
-// 			html += "frameborder = '0' " + "width='100%' height='650px'" + "</iframe></div></div>";
-// 			$('#answer-heading').addClass('d-none');
-// 		} 
-// 		else {
-// 			html += "<div class='line-lg'></div>";
-// 			for (i=0; i<overageLink.length; i++) {
-// 				html += "<div class='col-lg-12 auto-margin text-center faq-nav'>" + "<a href=" + "'" + overageLink[i].url + "'";
-// 				html += " target=_blank>" + overageLink[i].name + "</a></div>"
-// 					}
-// 				html += "</div>"
-
-// 		}
-// 	} else {
-// 			html += "<div class='line-lg'></div>";
-// 			html += "<div class='col-lg-8 auto-margin text-center'>" + "<p>" + "Part Time Dues are $750" + "</p>";
-// 			html += "<p>" + "Full Time Dues are $1350" + "</p></div>";
-// 	}
-// 	$(answer).html(html);
-// 	$('.faq-nav').removeClass('active');
-// 	var activeLink = '.faq-nav' + ':nth-child(' + (array + 1) + ")";
-// 	$(activeLink).addClass('active')
-// }
 
 var buildBoardPage = function () {
 	var html = "<div class='row'>" + "<div class='col-xs-12 col-sm-12'>";
