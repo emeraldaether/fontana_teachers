@@ -10,6 +10,10 @@ var pageTitle = "Home";
 var screenHeight = window.innerHeight;
 var screenWidth = window.innerWidth;
  	navLinks = document.getElementsByClassName('internal-link');
+ 	// Set a same-site cookie for first-party contexts
+document.cookie = 'cookie1=value1; SameSite=Lax;';
+// Set a cross-site cookie for third-party contexts
+document.cookie = 'cookie2=value2; SameSite=None; Secure';
 
 	document.title = pageTitle;
 
@@ -59,7 +63,7 @@ body.addEventListener("click", function(e) {
 					html += helpInfo.phone + "</h2></div>"
 					$(box).html(html);
 			} else {
-				e.preventDefault();
+				
 		for (i=0; i<combinedArray.length; i++)
 			if (combinedArray[i].id == target.id) {
 				if (i != 2) {
